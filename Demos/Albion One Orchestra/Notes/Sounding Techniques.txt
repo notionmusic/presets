@@ -1,0 +1,14 @@
+Strings that sound:
+
+Long: generic (1)
+Long: octaves (3)
+Long: muted (7)
+Long: tremolo/flutter (11)
+Short: generic (40)
+Short: very short spicc (42)
+Short: octaves (45)
+Short: plucked (56)
+Short: struck (58)
+
+
+

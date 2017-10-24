@@ -10,8 +10,8 @@
 
 		<technique  number=1>Long: generic</technique>
 		<technique  number=2>Long: alternative</technique>
-		<technique  number=3>Long: octave</technique>
-		<technique  number=4>Long: octave muted</technique>
+		<technique  number=3>Long: octaves</technique>
+		<technique  number=4>Long: octaves muted</technique>
 		<technique  number=5>Long: small (1/2)</technique>
 		<technique  number=6>Long: small muted</technique>
 		<technique  number=7>Long: muted</technique>
@@ -30,8 +30,8 @@
 
 		<technique number=20>Legato: generic</technique>
 		<technique number=21>Legato: alternative</technique>
-		<technique number=22>Legato: octave</technique>
-		<technique number=23>Legato: octave muted</technique>
+		<technique number=22>Legato: octaves</technique>
+		<technique number=23>Legato: octaves muted</technique>
 		<technique number=24>Legato: small</technique>
 		<technique number=25>Legato: small muted</technique>
 		<technique number=26>Legato: muted</technique>
@@ -51,8 +51,8 @@
 		<technique number=42>Short: very short spicc</technique>
 		<technique number=43>Short: very short soft</technique>
 		<technique number=44>Short: leisurely stacc</technique>
-		<technique number=45>Short: octave</technique>
-		<technique number=46>Short: octave muted</technique>
+		<technique number=45>Short: octaves</technique>
+		<technique number=46>Short: octaves muted</technique>
 		<technique number=47>Short: muted</technique>
 		<technique number=48>Short: soft/brush</technique>
 		<technique number=49>Short: hard/dig</technique>

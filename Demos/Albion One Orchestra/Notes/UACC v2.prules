@@ -1,0 +1,508 @@
+<rule-set version="1">
+
+	<rules>
+
+		<dynamic-map id="VELO">
+			<dynamic dynamic="pppp" value="0"/>
+			<dynamic dynamic="ppp" value="20"/>
+			<dynamic dynamic="pp" value="40"/>
+			<dynamic dynamic="p" value="50"/>
+			<dynamic dynamic="mp" value="54 "/>
+			<dynamic dynamic="mf" value="65"/>
+			<dynamic dynamic="f" value="80"/>
+			<dynamic dynamic="ff" value="100"/>
+			<dynamic dynamic="fff" value="110"/>
+			<dynamic dynamic="ffff" value="127"/>
+		</dynamic-map>
+
+		<dynamic-map id="HAIR">
+			<dynamic dynamic="pppp" value="0"/>
+			<dynamic dynamic="ppp" value="30"/>
+			<dynamic dynamic="pp" value="40"/>
+			<dynamic dynamic="p" value="60"/>
+			<dynamic dynamic="mp" value="80"/>
+			<dynamic dynamic="mf" value="90"/>
+			<dynamic dynamic="f" value="100"/>
+			<dynamic dynamic="ff" value="110"/>
+			<dynamic dynamic="fff" value="120"/>
+			<dynamic dynamic="ffff" value="127"/>
+		</dynamic-map>
+
+		<setup>
+			<velocity-map id="VELO"/>
+			<hairpin-map id="HAIR"/>
+			<hairpin-cc value="1"/>
+			<send-keyswitch-off value="false"/>
+		</setup>
+
+		<rule remark="normale" enabled="true">
+			<if no-articulation="true"/>
+			<if no-techniques="true"/>
+			<cc controller="32" value="1" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="dash" enabled="true">
+			<if articulation="dash"/>
+			<duration-change amount="0.8" />
+			<cc controller="32" value="1" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="staccato" enabled="true">
+			<if articulation="staccato"/>
+			<cc controller="32" value="40" type="note-on-prefix"/>
+		</rule> 
+
+		<rule remark="staccatissimo" enabled="true">
+			<if articulation="staccatissimo"/>
+			<cc controller="32" value="42" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="mezzo-staccato" enabled="true">
+			<if articulation="mezzo-staccato" />
+			<duration-change amount="0.6" />
+			<cc controller="32" value="1" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="accent" enabled="true">
+			<if articulation="accent" />
+			<velocity-change bump="20" />
+			<duration-change amount="0.6" />
+			<cc controller="32" value="1" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="legato-accent" enabled="true">
+			<if articulation="legato-accent" />
+			<velocity-change bump="20" />
+			<duration-change amount="1.0" />
+			<cc controller="32" value="1" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="staccato-accent" enabled="true">
+			<if articulation="staccato-accent" />
+			<velocity-change bump="30" />
+			<cc controller="32" value="40" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="staccatissimo-accent" enabled="true">
+			<if articulation="staccatissimo-accent" />
+			<velocity-change bump="30" />
+			<cc controller="32" value="42" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="strong-accent" enabled="true">
+			<if articulation="strong-accent" />
+			<velocity-change bump="40" />
+			<duration-change amount="0.6" />
+			<cc controller="32" value="1" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="legato-strong-accent" enabled="true">
+			<if articulation="legato-strong-accent" />
+			<velocity-change bump="40" />
+			<duration-change amount="1.0" />
+			<cc controller="32" value="1" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="staccato-strong-accent" enabled="true">
+			<if articulation="staccato-strong-accent" />
+			<velocity-change bump="40" />
+			<cc controller="32" value="40" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="staccatissimo-strong-accent" enabled="true">
+			<if articulation="staccatissimo-strong-accent" />
+			<velocity-change bump="40" />
+			<cc controller="32" value="42" type="note-on-prefix"/>
+		</rule>
+
+		<!-- Long (sustain) -->
+
+		<rule remark="Long: Generic" enabled="true">
+			<if user-technique="1"/>
+			<cc controller="32" value="1" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Alternative" enabled="true">
+			<if user-technique="2"/>
+			<cc controller="32" value="2" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Octave" enabled="true">
+			<if user-technique="3"/>
+			<cc controller="32" value="3" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Octave muted" enabled="true">
+			<if user-technique="4"/>
+			<cc controller="32" value="4" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Small" enabled="true">
+			<if user-technique="5"/>
+			<cc controller="32" value="5" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Small muted" enabled="true">
+			<if user-technique="6"/>
+			<cc controller="32" value="6" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Muted" enabled="true">
+			<if user-technique="7"/>
+			<cc controller="32" value="7" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Muted" enabled="true">
+			<if technique="mute"/>
+			<cc controller="32" value="7" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Soft/hollow" enabled="true">
+			<if user-technique="8"/>
+			<cc controller="32" value="8" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Hard/cuivre" enabled="true">
+			<if user-technique="9"/>
+			<cc controller="32" value="9" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Harmonic" enabled="true">
+			<if user-technique="10"/>
+			<cc controller="32" value="10" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Tremolo" enabled="true">
+			<if user-technique="11"/>
+			<cc controller="32" value="11" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Tremolo" enabled="true">
+			<if technique="trem"/>
+			<cc controller="32" value="11" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Tremolo muted" enabled="true">
+			<if user-technique="12"/>
+			<cc controller="32" value="12" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Tremolo soft" enabled="true">
+			<if user-technique="13"/>
+			<cc controller="32" value="13" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Tremolo hard" enabled="true">
+			<if user-technique="14"/>
+			<cc controller="32" value="14" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Tremolo muted low" enabled="true">
+			<if user-technique="15"/>
+			<cc controller="32" value="15" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Molto vibrato" enabled="true">
+			<if user-technique="16"/>
+			<cc controller="32" value="16" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Higher/sul tasto" enabled="true">
+			<if user-technique="17"/>
+			<cc controller="32" value="17" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Lower/sul pont" enabled="true">
+			<if user-technique="18"/>
+			<cc controller="32" value="18" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Long: Lower muted" enabled="true">
+			<if user-technique="19"/>
+			<cc controller="32" value="19" type="note-on-prefix"/>
+		</rule>
+
+		<!-- Legato -->
+
+		<rule remark="Legato: Generic" enabled="false">
+			<if user-technique="20"/>
+			<cc controller="32" value="20" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Alternative" enabled="false">
+			<if user-technique="21"/>
+			<cc controller="32" value="21" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Octave" enabled="false">
+			<if user-technique="22"/>
+			<cc controller="32" value="22" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Octave muted" enabled="false">
+			<if user-technique="23"/>
+			<cc controller="32" value="23" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Small" enabled="false">
+			<if user-technique="24"/>
+			<cc controller="32" value="24" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Small muted" enabled="false">
+			<if user-technique="25"/>
+			<cc controller="32" value="25" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Muted" enabled="false">
+			<if user-technique="26"/>
+			<cc controller="32" value="26" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Muted" enabled="false">
+			<if technique="mute"/>
+			<cc controller="32" value="26" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Soft" enabled="false">
+			<if user-technique="27"/>
+			<cc controller="32" value="27" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Hard" enabled="false">
+			<if user-technique="28"/>
+			<cc controller="32" value="28" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Harmonic" enabled="false">
+			<if user-technique="29"/>
+			<cc controller="32" value="29" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Tremolo" enabled="false">
+			<if user-technique="30"/>
+			<cc controller="32" value="30" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Slow gliss" enabled="false">
+			<if user-technique="31"/>
+			<cc controller="32" value="31" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Fast gliss" enabled="false">
+			<if user-technique="32"/>
+			<cc controller="32" value="32" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Run" enabled="false">
+			<if user-technique="33"/>
+			<cc controller="32" value="33" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Detache" enabled="false">
+			<if user-technique="34"/>
+			<cc controller="32" value="34" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Higher/sul tasto" enabled="false">
+			<if user-technique="35"/>
+			<cc controller="32" value="35" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Legato: Lower/sul pont" enabled="false">
+			<if user-technique="36"/>
+			<cc controller="32" value="36" type="note-on-prefix"/>
+		</rule>
+
+		<!-- Short -->
+
+		<rule remark="Short: Generic" enabled="true">
+			<if user-technique="40"/>
+			<cc controller="32" value="40" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Alternative" enabled="true">
+			<if user-technique="41"/>
+			<cc controller="32" value="41" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Very short/spic" enabled="true">
+			<if user-technique="42"/>
+			<cc controller="32" value="42" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Very short soft" enabled="true">
+			<if user-technique="43"/>
+			<cc controller="32" value="43" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Leisurely" enabled="true">
+			<if user-technique="44"/>
+			<cc controller="32" value="44" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Octave" enabled="true">
+			<if user-technique="45"/>
+			<cc controller="32" value="45" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Octave muted" enabled="true">
+			<if user-technique="46"/>
+			<cc controller="32" value="46" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Muted" enabled="true">
+			<if user-technique="47"/>
+			<cc controller="32" value="47" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Soft/brush/feather" enabled="true">
+			<if user-technique="48"/>
+			<cc controller="32" value="48" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Hard/dig" enabled="true">
+			<if user-technique="49"/>
+			<cc controller="32" value="49" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Tenuto" enabled="true">
+			<if user-technique="50"/>
+			<cc controller="32" value="50" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Tenuto soft" enabled="true">
+			<if user-technique="51"/>
+			<cc controller="32" value="51" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Marcato" enabled="true">
+			<if user-technique="52"/>
+			<cc controller="32" value="52" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Marcato soft" enabled="true">
+			<if user-technique="53"/>
+			<cc controller="32" value="53" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Marcato hard" enabled="true">
+			<if user-technique="54"/>
+			<cc controller="32" value="54" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Marcato long" enabled="true">
+			<if user-technique="55"/>
+			<cc controller="32" value="55" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Plucked/pizz" enabled="true">
+			<if user-technique="56"/>
+			<cc controller="32" value="56" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Plucked/pizz" enabled="true">
+			<if technique="pizz"/>
+			<cc controller="32" value="56" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Plucked hard/bartok" enabled="true">
+			<if user-technique="57"/>
+			<cc controller="32" value="57" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Struck/col legno" enabled="true">
+			<if user-technique="58"/>
+			<cc controller="32" value="58" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Struck/col legno" enabled="true">
+			<if technique="legn"/>
+			<cc controller="32" value="58" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Higher/sul tasto" enabled="true">
+			<if user-technique="59"/>
+			<cc controller="32" value="59" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Lower/sul pont" enabled="true">
+			<if user-technique="60"/>
+			<cc controller="32" value="60" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Short: Harmonic" enabled="true">
+			<if user-technique="61"/>
+			<cc controller="32" value="61" type="note-on-prefix"/>
+		</rule>
+
+		<!-- Decorative -->
+
+		<rule remark="Trill min 2nd" enabled="true">
+			<if user-technique="70"/>
+			<cc controller="32" value="70" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Trill maj 2nd" enabled="true">
+			<if user-technique="71"/>
+			<cc controller="32" value="71" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Trill min 3rd" enabled="true">
+			<if user-technique="72"/>
+			<cc controller="32" value="72" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Trill maj 3rd" enabled="true">
+			<if user-technique="73"/>
+			<cc controller="32" value="73" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Trill 4th" enabled="true">
+			<if user-technique="74"/>
+			<cc controller="32" value="74" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Multitongue" enabled="true">
+			<if user-technique="75"/>
+			<cc controller="32" value="75" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Multitongue muted" enabled="true">
+			<if user-technique="76"/>
+			<cc controller="32" value="76" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Trem 120bpm" enabled="true">
+			<if user-technique="80"/>
+			<cc controller="32" value="80" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Trem 150bpm" enabled="true">
+			<if user-technique="81"/>
+			<cc controller="32" value="81" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Trem 180bpm" enabled="true">
+			<if user-technique="82"/>
+			<cc controller="32" value="82" type="note-on-prefix"/>
+		</rule>
+
+		<!-- Phrases -->
+
+		<rule remark="FX 1" enabled="true">
+			<if user-technique="90"/>
+			<cc controller="32" value="90" type="note-on-prefix"/>
+		</rule>
+		<rule remark="FX 2" enabled="true">
+			<if user-technique="91"/>
+			<cc controller="32" value="91" type="note-on-prefix"/>
+		</rule>
+		<rule remark="FX 3" enabled="true">
+			<if user-technique="92"/>
+			<cc controller="32" value="92" type="note-on-prefix"/>
+		</rule>
+		<rule remark="FX 4" enabled="true">
+			<if user-technique="93"/>
+			<cc controller="32" value="93" type="note-on-prefix"/>
+		</rule>
+		<rule remark="FX 5" enabled="true">
+			<if user-technique="94"/>
+			<cc controller="32" value="94" type="note-on-prefix"/>
+		</rule>
+		<rule remark="FX 6" enabled="true">
+			<if user-technique="95"/>
+			<cc controller="32" value="95" type="note-on-prefix"/>
+		</rule>
+		<rule remark="FX 7" enabled="true">
+			<if user-technique="96"/>
+			<cc controller="32" value="96" type="note-on-prefix"/>
+		</rule>
+		<rule remark="FX 8" enabled="true">
+			<if user-technique="97"/>
+			<cc controller="32" value="97" type="note-on-prefix"/>
+		</rule>
+		<rule remark="FX 9" enabled="true">
+			<if user-technique="98"/>
+			<cc controller="32" value="98" type="note-on-prefix"/>
+		</rule>
+		<rule remark="FX 10" enabled="true">
+			<if user-technique="99"/>
+			<cc controller="32" value="99" type="note-on-prefix"/>
+		</rule>
+
+		<rule remark="Up runs/rips" enabled="true">
+			<if user-technique="100"/>
+			<cc controller="32" value="100" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Down runs/falls" enabled="true">
+			<if user-technique="101"/>
+			<cc controller="32" value="101" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Crescendo" enabled="true">
+			<if user-technique="102"/>
+			<cc controller="32" value="102" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Decrescendo" enabled="true">
+			<if user-technique="103"/>
+			<cc controller="32" value="103" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Arc" enabled="true">
+			<if user-technique="104"/>
+			<cc controller="32" value="104" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Slides" enabled="true">
+			<if user-technique="105"/>
+			<cc controller="32" value="105" type="note-on-prefix"/>
+		</rule>
+
+		<!-- Various -->
+
+		<rule remark="Disco up/rips" enabled="true">
+			<if user-technique="110"/>
+			<cc controller="32" value="110" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Disco down/falls" enabled="true">
+			<if user-technique="111"/>
+			<cc controller="32" value="111" type="note-on-prefix"/>
+		</rule>
+		<rule remark="Single string" enabled="true">
+			<if user-technique="112"/>
+			<cc controller="32" value="112" type="note-on-prefix"/>
+		</rule>
+
+	</rules>
+
+</rule-set>
+
