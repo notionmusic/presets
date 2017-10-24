@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<preset>
+
+	<identifier>com.notion.spitfireaudio.AlbionOne.v1</identifier>
+
+	<name lang="en-US">Albion One</name>
+
+	<user-techniques>
+
+		<technique number=1>Generic</technique>
+		<technique number=2>Alternative</technique>
+		<technique number=3>Octave</technique>
+		<technique number=4>Octave muted</technique>
+		<technique number=5>Small (1/2)</technique>
+		<technique number=6>Small muted</technique>
+		<technique number=7>Muted</technique>
+		<technique number=8>Soft (flaut/hollow)</technique>
+		<technique number=9>Hard (cuivre/overb)</technique>
+		<technique number=10>Harmonic</technique>
+		<technique number=11>Tremolo/flutter</technique>
+		<technique number=12>Tremolo muted</technique>
+		<technique number=13>Tremolo soft/low</technique>
+		<technique number=14>Tremolo hard/high</technique>
+		<technique number=15>Tremolo muted low</technique>
+		<technique number=16>Vibrato (molto vib)</technique>
+		<technique number=17>Higher (sultasto/bells up)</technique>
+		<technique number=18>Lower (sul pont)</technique>
+		<technique number=19>Lower muted</technique>
+		<technique number=20>Generic</technique>
+		<technique number=21>Alternative</technique>
+		<technique number=22>Octave</technique>
+		<technique number=23>Octave muted</technique>
+		<technique number=24>Small</technique>
+		<technique number=25>Small muted</technique>
+		<technique number=26>Muted</technique>
+		<technique number=27>Soft</technique>
+		<technique number=28>Hard</technique>
+		<technique number=29>Harmonic</technique>
+		<technique number=30>Tremolo</technique>
+		<technique number=31>Slow (port/gliss)</technique>
+		<technique number=32>Fast</technique>
+		<technique number=33>Run</technique>
+		<technique number=34>Detache</technique>
+		<technique number=35>Higher</technique>
+		<technique number=36>Lower</technique>
+		<technique number=40>Generic</technique>
+		<technique number=41>Alternative</technique>
+		<technique number=42>Very short (spicc)</technique>
+		<technique number=43>Very short (soft)</technique>
+		<technique number=44>Leisurely (stacc)</technique>
+		<technique number=45>Octave</technique>
+		<technique number=46>Octave muted</technique>
+		<technique number=47>Muted</technique>
+		<technique number=48>Soft (brush/feather)</technique>
+		<technique number=49>Hard (dig)</technique>
+		<technique number=50>Tenuto</technique>
+		<technique number=51>Tenuto Soft</technique>
+		<technique number=52>Marcato</technique>
+		<technique number=53>Marcato Soft</technique>
+		<technique number=54>Marcato Hard</technique>
+		<technique number=55>Marcato Long</technique>
+		<technique number=56>Plucked (pizz)</technique>
+		<technique number=57>Plucked hard (bartok)</technique>
+		<technique number=58>Struck (col leg)</technique>
+		<technique number=59>Higher</technique>
+		<technique number=60>Lower</technique>
+		<technique number=61>Harmonic</technique>
+		<technique number=70>Trill (minor 2nd)</technique>
+		<technique number=71>Trill (major 2nd)</technique>
+		<technique number=72>Trill (minor 3rd)</technique>
+		<technique number=73>Trill (major 3rd)</technique>
+		<technique number=74>Trill (perfect 4th)</technique>
+		<technique number=75>Multitongue</technique>
+		<technique number=76>Multitongue muted</technique>
+		<technique number=80>Synced - 120bpm (trem/trill)</technique>
+		<technique number=81>Synced - 150bpm (trem/trill)</technique>
+		<technique number=82>Synced - 180bpm (trem/trill)</technique>
+		<technique number=90>FX 1</technique>
+		<technique number=91>FX 2</technique>
+		<technique number=92>FX 3</technique>
+		<technique number=93>FX 4</technique>
+		<technique number=94>FX 5</technique>
+		<technique number=95>FX 6</technique>
+		<technique number=96>FX 7</technique>
+		<technique number=97>FX 8</technique>
+		<technique number=98>FX 9</technique>
+		<technique number=99>FX 10</technique>
+		<technique number=100>Up (rips/runs)</technique>
+		<technique number=101>Downs (falls/runs)</technique>
+		<technique number=102>Crescendo</technique>
+		<technique number=103>Decrescendo</technique>
+		<technique number=104>Arc</technique>
+		<technique number=105>Slides</technique>
+		<technique number=110>Disco up (rips)</technique>
+		<technique number=111>Disco down (falls)</technique>
+		<technique number=112>Single string (Sul C/G/etc.)</technique>
+
+	</user-techniques>
+
+</preset>
+
+

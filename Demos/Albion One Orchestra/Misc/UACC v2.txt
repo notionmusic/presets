@@ -1,0 +1,102 @@
+UACC on CC32 (v2)
+
+Long (sustain)
+1 Generic
+2 Alternative
+3 Octave
+4 Octave muted
+5 Small (1/2)
+6 Small muted
+7 Muted
+8 Soft (flaut/hollow)
+9 Hard (cuivre/overb)
+10 Harmonic
+11 Tremolo/flutter
+12 Tremolo muted
+13 Tremolo soft/low
+14 Tremolo hard/high
+15 Tremolo muted low
+16 Vibrato (molto vib)
+17 Higher (sultasto/bells up)
+18 Lower (sul pont)
+19 Lower muted
+
+Legato
+20 Generic
+21 Alternative
+22 Octave
+23 Octave muted
+24 Small
+25 Small muted
+26 Muted
+27 Soft
+28 Hard
+29 Harmonic
+30 Tremolo
+31 Slow (port/gliss)
+32 Fast
+33 Run
+34 Detache
+35 Higher
+36 Lower
+
+Short
+40 Generic
+41 Alternative
+42 Very short (spicc)
+43 Very short (soft)
+44 Leisurely (stacc)
+45 Octave
+46 Octave muted
+47 Muted
+48 Soft (brush/feather)
+49 Hard (dig)
+50 Tenuto
+51 Tenuto Soft
+52 Marcato
+53 Marcato Soft
+54 Marcato Hard
+55 Marcato Long
+56 Plucked (pizz)
+57 Plucked hard (bartok)
+58 Struck (col leg)
+59 Higher
+60 Lower
+61 Harmonic
+
+Decorative
+70 Trill (minor 2nd)
+71 Trill (major 2nd)
+72 Trill (minor 3rd)
+73 Trill (major 3rd)
+74 Trill (perfect 4th)
+75 Multitongue
+76 Multitongue muted
+80 Synced - 120bpm (trem/trill)
+81 Synced - 150bpm (trem/trill)
+82 Synced - 180bpm (trem/trill)
+
+Phrases & Dynamics
+90 FX 1
+91 FX 2
+92 FX 3
+93 FX 4
+94 FX 5
+95 FX 6
+96 FX 7
+97 FX 8
+98 FX 9
+99 FX 10
+100 Up (rips/runs)
+101 Downs (falls/runs)
+102 Crescendo
+103 Decrescendo
+104 Arc
+105 Slides
+
+Various
+110 Disco up (rips)
+111 Disco down (falls)
+112 Single string (Sul C/G/etc.)
+
+
