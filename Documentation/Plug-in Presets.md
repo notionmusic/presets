@@ -37,7 +37,7 @@ You can put music and tests of various expressions in this file. This is useful 
 User-defined expressions
 ------------------------
 
-Many sound libraries have sounds that don't have a standard technique name in notation. Use can have your preset access these with a preset expression, or user technique.
+Many sound libraries have sounds that don't have a standard technique name in notation. You can have your preset access these with a preset expression, or user technique.
 
 In the preset definition, keep the number unique. This number will be used to match an expression you've entered in the score and the rule you make for it.
 
