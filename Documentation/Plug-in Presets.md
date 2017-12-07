@@ -71,7 +71,9 @@ The location of the second of each locations above will change with the app's ma
 
 Using the presets
 ----------------
-On launching, Notion will check the two preset locations above, and add any Presets it finds to Score Setup. Look under VST Presets>Your Preset Name
+On launching, Notion will check the two preset locations above, and add any Presets it finds to Score Setup. 
+Look under VST Presets>Your Preset Name in Score Setup.
+
 Select the instrument, and Notion will add it to the score.
 
 
