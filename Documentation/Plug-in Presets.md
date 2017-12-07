@@ -35,7 +35,7 @@ The part will be used as a template when adding this instrument to the score, so
 You can put music and tests of various expressions in this file. This is useful and recommended. 
 
 
-User-defined expressions
+Preset Expressions
 ------------------------
 
 Many sound libraries have sounds that don't have a standard technique name in notation. You can have your preset access these with a preset expression, or user technique.
@@ -51,6 +51,7 @@ In the preset definition, keep the number unique. This number will be used to ma
         </user-techniques>
     </preset>
 
+Once you've created the expression in the XML and the corresponding rule in the Notion file, you can use it. Click the Techniques box in the Palette, then the arrow. This will show 'User' in the cursor. Place it where you wish in the score - Notion will then give you the list of expressions that you created.
 
 Preset locations
 ----------------
