@@ -5,7 +5,8 @@ A plug-in preset is a folder with these items:
 
 * A file named `Preset.xml`
 * A folder named `Instruments`
-* In the Instruments folder, a Notion file for each instrument
+* Within the Instruments folder, you can have optionally have one level of sub-folders for an instrument family (e.g. Brass / Wind / Strings)
+* In the Instruments folder (or optional sub-folder), a Notion file for each instrument
 
 
 Preset.xml
@@ -29,7 +30,7 @@ Each file should have:
 * One part with a plug-in instrument
 * One rules definition in `Use Rules`
 
-The part will be used as a template when adding this instrument to the score, so things like the staff name, abbreviation, and staff type will be copied when you add this instrument into your score.
+The part will be used as a template when adding this instrument to the score, so things like the staff name, clef, transposition, abbreviation, and staff type will be copied when you add this instrument into your score.
 
 You can put music and tests of various expressions in this file. This is useful and recommended. 
 
@@ -51,23 +52,26 @@ In the preset definition, keep the number unique. This number will be used to ma
     </preset>
 
 
-
 Preset locations
 ----------------
+You can save the folder in one of two possible locations (depending on how you wish to organise yourself):
 
 On macOS, Notion will look for presets here:
 
-* `/Users/<user>/Documents/Notion 6/Presets`
+* `/Users/<user>/Documents/Notion/Presets` (you will need to create this folder if it does not already exist)
 * `/Library/Application Support/Notion Music/Notion 6/Presets`
 
 On Windows, Notion looks here:
 
-* `C:\Users\<users>\Documents\Notion 6\Presets`
+* `C:\Users\<users>\Documents\Notion\Presets`(you will need to create this folder if it does not already exist)
 * `C:\Program Files\Notion 6\Presets` (or where you have installed Notion)
 
-The location will change with the app's major version, so Notion 7 will have presets in its own folder.
+The location of the second of each locations above will change with the app's major version, so Notion 7 will have presets in its own folder.
 
 
-
+Using the presets
+----------------
+On launching, Notion will check the two preset locations above, and add any Presets it finds to Score Setup. Look under VST Presets>Your Preset Name
+Select the instrument, and Notion will add it to the score.
 
 
