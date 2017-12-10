@@ -1,0 +1,182 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="rubs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="87" />
+		<dynamic dynamic="f"    value="91" />
+		<dynamic dynamic="ff"   value="98" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="112" />
+		<dynamic dynamic="fffff" value="125" />
+	</dynamic-map>
+
+    <dynamic-map id="rbbs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="rubs" /> 
+			<hairpin-map id="rubs" />
+			<hairpin-cc value="11" />
+			<!-- <hairpin-anchor value="69" />  -->
+		</setup>
+		
+<!-- Main Rule -->
+		
+		<rule name="VET FE Suspended Cymbal 18" - main sound">
+			<set-flag name="main"/>
+		</rule>
+
+<!-- Accents Rule -->
+
+		<rule name="All Accents">
+			<if articulation="accent"/>
+			<dynamic-change bump="1"/>
+		</rule>
+
+<!-- Suspended Cymbal 18" Flags -->
+
+		<rule name="Suspended Cymbal 18" - Hit 1">
+			<if pitch="a4"/>
+			<component id="1"/>
+			<set-flag name="hit1"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Suspended Cymbal 18" - Hit 2">
+			<if pitch="c5"/>
+			<component id="2"/>
+			<set-flag name="hit2"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Suspended Cymbal 18" - Tremolo 1">
+			<if technique="trem"/>
+			<if pitch="a4"/>
+			<component id="3"/>
+			<set-flag name="trm1"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Suspended Cymbal 18" - Tremolo 2">
+			<if technique="trem"/>
+			<if pitch="c5"/>
+			<component id="3"/>
+			<set-flag name="trm2"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Suspended Cymbal 18" - Roll 1">
+			<if technique="rall"/>
+			<if pitch="a4"/>
+			<component id="3"/>
+			<set-flag name="rol1"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Suspended Cymbal 18" - Roll 2">
+			<if technique="rall"/>
+			<if pitch="c5"/>
+			<component id="3"/>
+			<set-flag name="rol2"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Suspended Cymbal 18" - Scrape 1">
+			<if technique="scra"/>
+			<if pitch="a4"/>
+			<component id="4"/>
+			<set-flag name="scp1"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Suspended Cymbal 18" - Scrape 2">
+			<if technique="scra"/>
+			<if pitch="b4"/>
+			<component id="4"/>
+			<set-flag name="scp2"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Suspended Cymbal 18" - Scrape 3">
+			<if technique="bowd"/>
+			<component id="5"/>
+			<set-flag name="bowd"/>
+			<unset-flag name="main"/>
+		</rule>
+
+
+<!-- Suspended Cymbal 18" Techniques -->
+
+
+		<rule name="Hit 1">
+			<if flag="hit1"/>
+			<fixed-pitch pitch="c4"/>
+		</rule>
+
+		<rule name="Hit 2">
+			<if flag="hit2"/>
+			<fixed-pitch pitch="d4"/>
+		</rule>
+
+		<rule name="Tremolo 1">
+			<if flag="trm1"/>
+			<fixed-pitch pitch="c5"/>
+		</rule>
+
+		<rule name="Tremolo 1">
+			<if flag="trm2"/>
+			<fixed-pitch pitch="d5"/>
+		</rule>
+
+		<rule name="Roll">
+			<if flag="rol1"/>
+			<fixed-pitch pitch="c5"/>
+		</rule>
+
+		<rule name="Roll">
+			<if flag="rol2"/>
+			<fixed-pitch pitch="d5"/>
+		</rule>
+
+		<rule name="Scrape 1">
+			<if flag="scp1"/>
+			<fixed-pitch pitch="f5"/>
+		</rule>
+
+		<rule name="Scrape 3">
+			<if flag="bowd"/>
+			<fixed-pitch pitch="g5"/>
+		</rule>
+
+
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+
+		
+		<rule name="Suspended Cymbal 18"- main sound">
+			<if flag="main"/>
+			<channel-change channel="1"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>

@@ -1,0 +1,215 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="rubs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="87" />
+		<dynamic dynamic="f"    value="91" />
+		<dynamic dynamic="ff"   value="98" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="112" />
+		<dynamic dynamic="fffff" value="125" />
+	</dynamic-map>
+
+    <dynamic-map id="rbbs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="rubs" /> 
+			<hairpin-map id="rubs" />
+			<hairpin-cc value="11" />
+			<!-- <hairpin-anchor value="69" />  -->
+		</setup>
+		
+<!-- Main Rule -->
+		
+		<rule name="VET FE Water Triangle - main sound">
+			<set-flag name="main"/>
+		</rule>
+
+<!-- Accents Rule -->
+
+		<rule name="All Accents">
+			<if articulation="accent"/>
+			<dynamic-change bump="1"/>
+		</rule>
+
+<!-- Component Pitch Set-->
+
+		<rule name="Water Triangle Hit 1 Flag">
+			<if pitch="a4"/>
+			<component id="1"/>
+			<unset-flag name="main"/>
+			<set-flag name="hit1"/>
+		</rule>
+
+		<rule name="Water Triangle Hit 2 Flag">
+			<if pitch="b4"/>
+			<component id="2"/>
+			<unset-flag name="main"/>
+			<set-flag name="hit2"/>
+		</rule>
+
+		<rule name="Water Triangle Hit 3 Flag">
+			<if pitch="c5"/>
+			<component id="3"/>
+			<unset-flag name="main"/>
+			<set-flag name="hit3"/>
+		</rule>
+
+		<rule name="Water Triangle Hit 4 Flag">
+			<if pitch="d5"/>
+			<component id="4"/>
+			<unset-flag name="main"/>
+			<set-flag name="hit4"/>
+		</rule>
+
+		<rule name="Water Triangle Hit with Vibrato Flag">
+			<if note-symbol="circle x"/>
+			<component id="5"/>
+			<unset-flag name="main"/>
+			<set-flag name="vib1"/>
+		</rule>
+
+		<rule name="Water Triangle Hit with Vibrato 2 Flag">
+			<if technique="vibe"/>
+			<component id="6"/>
+			<unset-flag name="main"/>
+			<set-flag name="vib2"/>
+		</rule>
+
+		<rule name="Water Triangle Tremolo 1 Flag">
+			<if pitch="a4"/>
+			<if technique="trem"/>
+			<component id="7"/>
+			<unset-flag name="main"/>
+			<set-flag name="trm1"/>
+		</rule>
+
+		<rule name="Water Triangle Tremolo 2 Flag">
+			<if pitch="b4"/>
+			<if technique="trem"/>
+			<component id="7"/>
+			<unset-flag name="main"/>
+			<set-flag name="trm2"/>
+		</rule>
+
+		<rule name="Water Triangle Tremolo 2 Flag">
+			<if pitch="c5"/>
+			<if technique="trem"/>
+			<component id="7"/>
+			<unset-flag name="main"/>
+			<set-flag name="trm3"/>
+		</rule>
+
+		<rule name="Water Triangle Roll All 1 Flag">
+			<if pitch="a4"/>
+			<if technique="rall"/>
+			<component id="7"/>
+			<unset-flag name="main"/>
+			<set-flag name="rol1"/>
+		</rule>
+
+		<rule name="Water Triangle Roll All 2 Flag">
+			<if pitch="b4"/>
+			<if technique="rall"/>
+			<component id="7"/>
+			<unset-flag name="main"/>
+			<set-flag name="rol2"/>
+		</rule>
+
+		<rule name="Water Triangle Roll All 3 Flag">
+			<if pitch="c5"/>
+			<if technique="rall"/>
+			<component id="7"/>
+			<unset-flag name="main"/>
+			<set-flag name="rol3"/>
+		</rule>
+
+<!-- Two Hits -->
+
+		<rule name="Water Triangle- Hit 1">
+			<if flag="hit1"/>
+			<fixed-pitch pitch="c4"/>
+		</rule>
+
+		<rule name="Water Triangle- Hit 2">
+			<if flag="hit2"/>
+			<fixed-pitch pitch="d4"/>
+		</rule>
+
+		<rule name="Water Triangle- Hit 3">
+			<if flag="hit3"/>
+			<fixed-pitch pitch="e4"/>
+		</rule>
+
+		<rule name="Water Triangle- Hit 4">
+			<if flag="vib1"/>
+			<fixed-pitch pitch="g4"/>
+		</rule>
+
+		<rule name="Water Triangle- Vibrato">
+			<if flag="vib2"/>
+			<fixed-pitch pitch="g4"/>
+		</rule>
+
+		<rule name="Water Triangle- Trem 1">
+			<if flag="trm1"/>
+			<fixed-pitch pitch="a4"/>
+		</rule>
+
+		<rule name="Water Triangle- Trem 2">
+			<if flag="trm2"/>
+			<fixed-pitch pitch="b4"/>
+		</rule>
+
+		<rule name="Water Triangle- Trem 3">
+			<if flag="trm3"/>
+			<fixed-pitch pitch="c5"/>
+		</rule>
+
+		<rule name="Water Triangle- Roll 1">
+			<if flag="rol1"/>
+			<fixed-pitch pitch="a4"/>
+		</rule>
+
+		<rule name="Water Triangle- Roll 2">
+			<if flag="rol2"/>
+			<fixed-pitch pitch="b4"/>
+		</rule>
+
+		<rule name="Water Triangle- Roll 3">
+			<if flag="rol3"/>
+			<fixed-pitch pitch="c5"/>
+		</rule>
+
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+
+		
+		<rule name="Water Triangle- main sound">
+			<if flag="main"/>
+			<channel-change channel="1"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>

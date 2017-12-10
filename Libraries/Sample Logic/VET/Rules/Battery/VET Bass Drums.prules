@@ -1,0 +1,331 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="rubs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+    <dynamic-map id="rbbs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="rubs" /> 
+			<hairpin-map id="rubs" />
+			<hairpin-cc value="11" />
+			<!-- <hairpin-anchor value="69" />  -->
+		</setup>
+		
+<!-- Main Rule -->
+		
+		<rule name="Bass Drum - main sound">
+			<set-flag name="main"/>
+		</rule>
+
+<!-- Accents Rule -->
+
+		<rule name="All Accents">
+			<if articulation="accent"/>
+			<dynamic-change bump="1"/>
+		</rule>
+
+<!-- Component Tests Rolls -->
+
+		<rule name="Bass Drum Roll">
+			<if technique="trem"/>
+			<unset-flag name="main"/>
+			<set-flag name="roll"/>
+		</rule>
+
+		<rule name="Bass Drum Roll">
+			<if flag="roll"/>
+			<if pitch="g5"/>
+			<channel-change channel="8"/>
+			<fixed-pitch pitch="f7"/>
+		</rule>
+
+		<rule name="Bass Drum Roll">
+			<if flag="roll"/>
+			<if pitch="e5"/>
+			<channel-change channel="8"/>
+			<fixed-pitch pitch="f7"/>
+		</rule>
+
+		<rule name="Bass Drum Roll">
+			<if flag="roll"/>
+			<if pitch="c5"/>
+			<channel-change channel="8"/>
+			<fixed-pitch pitch="f7"/>
+		</rule>
+
+		<rule name="Bass Drum Roll">
+			<if flag="roll"/>
+			<if pitch="a4"/>
+			<channel-change channel="8"/>
+			<fixed-pitch pitch="f7"/>
+		</rule>
+
+		<rule name="Bass Drum Roll">
+			<if flag="roll"/>
+			<if pitch="f4"/>
+			<channel-change channel="8"/>
+			<fixed-pitch pitch="f7"/>
+		</rule>
+
+<!-- Components Id's -->
+		
+		<rule name="18 in Bass Drum">
+			<if pitch="g5"/>
+			<if not-flag="roll"/>
+			<unset-flag name="main"/>
+			<set-flag name="bd18"/>
+		</rule>
+
+		<rule name="20 in Bass Drum">
+			<if pitch="e5"/>
+			<if not-flag="roll"/>
+			<unset-flag name="main"/>
+			<set-flag name="bd20"/>
+		</rule>
+
+		<rule name="24 in Bass Drum">
+			<if pitch="c5"/>
+			<if not-flag="roll"/>
+			<unset-flag name="main"/>
+			<set-flag name="bd24"/>
+		</rule>
+
+		<rule name="28 in Bass Drum">
+			<if pitch="a4"/>
+			<if not-flag="roll"/>
+			<unset-flag name="main"/>
+			<set-flag name="bd28"/>
+		</rule>
+
+		<rule name="30 in Bass Drum">
+			<if pitch="f4"/>
+			<if not-flag="roll"/>
+			<unset-flag name="main"/>
+			<set-flag name="bd30"/>
+		</rule>
+
+<!-- Pitch & Channel Change Flags for Components 1-5-->
+
+		<rule name="18 in Bass Drum">
+			<if flag="bd18"/>
+			<if not-flag="roll"/>
+			<component id="5"/>
+			<fixed-pitch pitch="f6"/>
+			<channel-change channel="1"/>
+		</rule>
+
+		<rule name="20 in Bass Drum">
+			<if flag="bd20"/>
+			<if not-flag="roll"/>
+			<component id="4"/>
+			<fixed-pitch pitch="f5"/>
+			<channel-change channel="3"/>
+		</rule>
+
+		<rule name="24 in Bass Drum">
+			<if flag="bd24"/>
+			<if not-flag="roll"/>
+			<component id="3"/>
+			<fixed-pitch pitch="f4"/>
+			<channel-change channel="5"/>
+		</rule>
+
+		<rule name="28 in Bass Drum">
+			<if flag="bd28"/>
+			<if not-flag="roll"/>
+			<component id="2"/>
+			<fixed-pitch pitch="f3"/>
+			<channel-change channel="10"/>
+		</rule>
+
+		<rule name="30 in Bass Drum">
+			<if flag="bd30"/>
+			<if not-flag="roll"/>
+			<component id="1"/>
+			<fixed-pitch pitch="f2"/>
+			<channel-change channel="12"/>
+		</rule>
+
+<!-- Component Tests Soft Mallet -->
+
+		<rule name="18 in Bass Drum Puffy">
+			<if component="5"/>
+			<if technique="smal"/>
+			<channel-change channel="2"/>
+		</rule>
+
+		<rule name="20 in Bass Drum Puffy">
+			<if component="4"/>
+			<if technique="smal"/>
+			<channel-change channel="4"/>
+		</rule>
+
+		<rule name="24 in Bass Drum Puffy">
+			<if component="3"/>
+			<if technique="smal"/>
+			<channel-change channel="6"/>
+		</rule>
+
+		<rule name="28 in Bass Drum Puffy">
+			<if component="2"/>
+			<if technique="smal"/>
+			<channel-change channel="11"/>
+		</rule>
+
+		<rule name="30 in Bass Drum Puffy">
+			<if component="1"/>
+			<if technique="smal"/>
+			<channel-change channel="13"/>
+		</rule>
+
+<!-- Component Tests Hard Mallet -->
+
+		<rule name="18 in Bass Drum Felt">
+			<if component="5"/>
+			<if technique="hmal"/>
+			<if technique="norm"/>
+			<channel-change channel="1"/>
+		</rule>
+
+		<rule name="20 in Bass Drum Felt">
+			<if component="4"/>
+			<if technique="hmal"/>
+			<if technique="norm"/>
+			<channel-change channel="3"/>
+		</rule>
+
+		<rule name="24 in Bass Drum Felt">
+			<if component="3"/>
+			<if technique="hmal"/>
+			<if technique="norm"/>
+			<channel-change channel="5"/>
+		</rule>
+
+		<rule name="28 in Bass Drum Felt">
+			<if component="2"/>
+			<if technique="hmal"/>
+			<if technique="norm"/>
+			<channel-change channel="10"/>
+		</rule>
+
+		<rule name="30 in Bass Drum Felt">
+			<if component="1"/>
+			<if technique="hmal"/>
+			<if technique="norm"/>
+			<channel-change channel="12"/>
+		</rule>
+		
+<!-- Component Tests Drag -->
+
+		<rule name="18 in Bass Drum Drag">
+			<if component="5"/>
+			<if technique="drag"/>
+			<transpose halfsteps="2"/>
+		</rule>
+
+		<rule name="20 in Bass Drum Drag">
+			<if component="4"/>
+			<if technique="drag"/>
+			<transpose halfsteps="2"/>
+		</rule>
+
+		<rule name="24 in Bass Drum Drag">
+			<if component="3"/>
+			<if technique="drag"/>
+			<transpose halfsteps="2"/>
+		</rule>
+
+		<rule name="28 in Bass Drum Drag">
+			<if component="2"/>
+			<if technique="drag"/>
+			<transpose halfsteps="2"/>
+		</rule>
+
+		<rule name="30 in Bass Drum Drag">
+			<if component="1"/>
+			<if technique="drag"/>
+			<transpose halfsteps="2"/>
+		</rule>
+		
+<!-- Component Tests Rim Stick -->
+
+		<rule name="18 in Bass Drum Rim">
+			<if component="5"/>
+			<if note-symbol="x"/>
+			<channel-change channel="1"/>
+			<transpose halfsteps="4"/>
+		</rule>
+
+		<rule name="20 in Bass Drum Rim">
+			<if component="4"/>
+			<if note-symbol="x"/>
+			<channel-change channel="3"/>
+			<transpose halfsteps="4"/>
+		</rule>
+
+		<rule name="24 in Bass Drum Rim">
+			<if component="3"/>
+			<if note-symbol="x"/>
+			<channel-change channel="5"/>
+			<transpose halfsteps="4"/>
+		</rule>
+
+		<rule name="28 in Bass Drum Rim">
+			<if component="2"/>
+			<if note-symbol="x"/>
+			<channel-change channel="10"/>
+			<transpose halfsteps="4"/>
+		</rule>
+
+		<rule name="30 in Bass Drum Rim">
+			<if component="1"/>
+			<if note-symbol="x"/>
+			<channel-change channel="12"/>
+			<transpose halfsteps="4"/>
+		</rule>
+
+
+
+
+
+
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+
+		
+		<rule name="Bass Drum - main sound">
+			<if flag="main"/>
+			<fixed-pitch pitch="e4"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>

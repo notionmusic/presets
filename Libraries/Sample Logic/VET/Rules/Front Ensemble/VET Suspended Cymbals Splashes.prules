@@ -1,0 +1,120 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="rubs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="87" />
+		<dynamic dynamic="f"    value="91" />
+		<dynamic dynamic="ff"   value="98" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="112" />
+		<dynamic dynamic="fffff" value="125" />
+	</dynamic-map>
+
+    <dynamic-map id="rbbs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="rubs" /> 
+			<hairpin-map id="rubs" />
+			<hairpin-cc value="11" />
+			<!-- <hairpin-anchor value="69" />  -->
+		</setup>
+		
+<!-- Main Rule -->
+		
+		<rule name="VET FE Zill Bells - main sound">
+			<set-flag name="main"/>
+		</rule>
+
+<!-- Accents Rule -->
+
+		<rule name="All Accents">
+			<if articulation="accent"/>
+			<dynamic-change bump="1"/>
+		</rule>
+
+<!-- Splash Flags -->
+
+		<rule name="Splash - Hit 1a Flag">
+			<if pitch="g4"/>
+			<component id="1"/>
+			<set-flag name="ht1a"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Splash - Hit 1b Flag">
+			<if pitch="a4"/>
+			<component id="1"/>
+			<set-flag name="ht1b"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Splash - Hit 2a Flag">
+			<if pitch="c5"/>
+			<component id="2"/>
+			<set-flag name="ht2a"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Splash - Hit 2b Flag">
+			<if pitch="d5"/>
+			<component id="2"/>
+			<set-flag name="ht2b"/>
+			<unset-flag name="main"/>
+		</rule>
+
+<!-- Splash Techniques -->
+
+		<rule name="Hit 1a">
+			<if flag="ht1a"/>
+			<fixed-pitch pitch="c3"/>
+		</rule>
+
+		<rule name="Hit 1b">
+			<if flag="ht1b"/>
+			<fixed-pitch pitch="d3"/>
+		</rule>
+
+		<rule name="Hit 2a">
+			<if flag="ht2a"/>
+			<fixed-pitch pitch="c4"/>
+		</rule>
+
+		<rule name="Hit 2b">
+			<if flag="ht2b"/>
+			<fixed-pitch pitch="d4"/>
+		</rule>
+
+
+
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+
+		
+		<rule name="Zill Bells- main sound">
+			<if flag="main"/>
+			<channel-change channel="1"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>

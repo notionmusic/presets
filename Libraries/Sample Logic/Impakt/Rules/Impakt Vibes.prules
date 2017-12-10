@@ -1,0 +1,174 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="rubs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="87" />
+		<dynamic dynamic="f"    value="91" />
+		<dynamic dynamic="ff"   value="98" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="112" />
+		<dynamic dynamic="fffff" value="125" />
+	</dynamic-map>
+
+    <dynamic-map id="rbbs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="rubs" /> 
+			<hairpin-map id="rubs" />
+			<hairpin-cc value="11" />
+			<!-- <hairpin-anchor value="69" />  -->
+		</setup>
+		
+<!-- Main Rule -->
+		
+<!-- 
+		<rule name="Vibes - Pedal">
+			<set technique-name="pddn"/>
+		</rule>
+
+		<rule name="Vibes - Pedal">
+			<set technique-name="pdup"/>
+		</rule>
+ -->
+
+		<rule name="VET FE Vibes - main sound">
+			<set-flag name="main"/>
+		</rule>
+
+<!-- Accents Rule -->
+
+		<rule name="All Accents">
+			<if articulation="accent"/>
+			<dynamic-change bump="1"/>
+		</rule>
+
+<!-- Vibes Flags -->
+
+		<rule name="Vibes - Hard Mallets">
+			<if articulation="staccato"/>
+			<unset-flag name="main"/>
+			<set-flag name="stac"/>
+		</rule>
+
+		<rule name="Vibes - Hard Mallets">
+			<if technique="hmal"/>
+			<unset-flag name="main"/>
+			<set-flag name="hard"/>
+		</rule>
+
+		<rule name="Vibes - Medium Mallets">
+			<if technique="cmal"/>
+			<unset-flag name="main"/>
+			<set-flag name="medm"/>
+		</rule>
+		
+		<rule name="Vibes - Soft Mallets">
+			<if technique="smal"/>
+			<unset-flag name="main"/>
+			<set-flag name="soft"/>
+		</rule>
+
+		<rule name="Vibes - Hard Mallets">
+			<if technique="hmal"/>
+			<if articulation="staccato"/>
+			<unset-flag name="main"/>
+			<set-flag name="shrd"/>
+		</rule>
+
+		<rule name="Vibes - Medium Mallets">
+			<if technique="cmal"/>
+			<if articulation="staccato"/>
+			<unset-flag name="main"/>
+			<set-flag name="smdm"/>
+		</rule>
+		
+		<rule name="Vibes - Soft Mallets">
+			<if technique="smal"/>
+			<if articulation="staccato"/>
+			<unset-flag name="main"/>
+			<set-flag name="ssft"/>
+		</rule>
+
+		<rule name="Vibes - Bowed">
+			<if technique="bowd"/>
+			<unset-flag name="main"/>
+			<set-flag name="bowd"/>
+		</rule>
+
+<!-- Vibes Techniques -->
+
+
+		<rule name="Vibes - Hard Mallet">
+			<if flag="stac"/>
+			<channel-change channel="3"/>
+		</rule>
+
+		<rule name="Vibes - Hard Mallet">
+			<if flag="hard"/>
+			<channel-change channel="2"/>
+		</rule>
+
+		<rule name="Vibes - Medium Mallet">
+			<if flag="medm"/>
+			<channel-change channel="4"/>
+		</rule>
+
+		<rule name="Vibes - Soft Mallet">
+			<if flag="soft"/>
+			<channel-change channel="6"/>
+		</rule>
+
+		<rule name="Vibes - Hard Mallet">
+			<if flag="shrd"/>
+			<set-flag name="hard"/>
+			<channel-change channel="1"/>
+		</rule>
+
+		<rule name="Vibes - Medium Mallet">
+			<if flag="smdm"/>
+			<channel-change channel="3"/>
+		</rule>
+
+		<rule name="Vibes - Soft Mallet">
+			<if flag="ssft"/>
+			<channel-change channel="5"/>
+		</rule>
+
+		<rule name="Vibes - Soft Mallet">
+			<if flag="bowd"/>
+			<channel-change channel="7"/>
+		</rule>
+
+
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+
+		
+		<rule name="Vibes - Aluminum Mallets main sound">
+			<if flag="main"/>
+			<channel-change channel="4"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>

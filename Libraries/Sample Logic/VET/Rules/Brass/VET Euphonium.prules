@@ -1,0 +1,567 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="fntp">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+    <dynamic-map id="fftp">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="fftp"/> 
+			<hairpin-map id="fntp"/>
+			<hairpin-cc value="11"/>
+			<hairpin-anchor value="69"/> 
+		</setup>
+
+
+<!-- Technique Flags -->
+		
+		<rule name="Euphonium - main sound">
+			<if flag="main"/>
+			<set-flag name="main"/>
+		</rule>
+
+		<rule name="Vibrato">
+			<if technique="vibe"/>
+			<unset-flag name="main"/>
+			<set-flag name="vibr"/>
+		</rule>
+		
+		<rule name="staccato flag">
+			<if articulation="staccato"/>
+			<unset-flag name="main"/>
+			<unset-flag name="vibr"/>
+			<set-flag name="stcc"/>			
+		</rule>
+
+		<rule name="staccatissimo flag">
+			<if articulation="staccatissimo"/>
+			<unset-flag name="main"/>
+			<unset-flag name="vibr"/>
+			<set-flag name="stco"/>			
+		</rule>
+
+		<rule name="Dash Flag">
+			<if articulation="dash"/>
+			<unset-flag name="main"/>
+			<set-flag name="deta"/>			
+		</rule>
+
+								<!-- Accents Flags-->
+		
+		<rule name="Accent Flag">
+			<if articulation="accent"/>
+			<unset-flag name="main"/>
+			<set-flag name="acct"/>			
+		</rule>		
+
+		<rule name="Strong Accent Flag">
+			<if articulation="strong-accent"/>
+			<unset-flag name="main"/>
+			<set-flag name="sact"/>			
+		</rule>		
+
+		<rule name="Accent Staccato Flag">
+			<if articulation="staccato-accent"/>
+			<unset-flag name="main"/>
+			<unset-flag name="acct"/>
+			<set-flag name="acst"/>			
+		</rule>
+
+		<rule name="Strong Accent Staccato Flag">
+			<if articulation="staccato-strong-accent"/>
+			<unset-flag name="main"/>
+			<unset-flag name="acct"/>
+			<set-flag name="ssac"/>			
+		</rule>
+
+		<rule name="Accent Staccatissimo Flag">
+			<if articulation="staccatissimo-accent"/>
+			<unset-flag name="main"/>
+			<unset-flag name="acct"/>
+			<unset-flag name="acst"/>			
+			<set-flag name="acso"/>			
+		</rule>
+
+		<rule name="Strong Accent Staccatissimo Flag">
+			<if articulation="staccatissimo-strong-accent"/>
+			<unset-flag name="main"/>
+			<unset-flag name="acct"/>
+			<unset-flag name="acst"/>			
+			<set-flag name="ssso"/>			
+		</rule>
+		
+		<rule name="Legato Accent Flag">
+			<if articulation="legato-accent"/>
+			<unset-flag name="main"/>
+			<set-flag name="lact"/>			
+		</rule>
+		
+		<rule name="Legato Strong Accent Flag">
+			<if articulation="legato-strong-accent"/>
+			<unset-flag name="main"/>
+			<set-flag name="lsac"/>			
+		</rule>
+
+								<!-- End Accents Flags-->
+
+		<rule name="Mezzo Staccato Flag">
+			<if articulation="mezzo-staccato"/>
+			<unset-flag name="main"/>
+			<unset-flag name="acct"/>
+			<set-flag name="mstc"/>			
+		</rule>
+
+		<rule name="Soft Start Flag">
+			<if articulation="soft-start"/>
+			<unset-flag name="main"/>
+			<unset-flag name="acct"/>
+			<set-flag name="strt"/>			
+		</rule>
+
+		<rule name="sFz Flag">
+			<if technique="sfz"/>
+			<unset-flag name="main"/>
+			<unset-flag name="acct"/>
+			<set-flag name="sfzx"/>			
+		</rule>
+
+		<rule name="forte piano Flag">
+			<if technique="fpno"/>
+			<unset-flag name="acct"/>
+			<unset-flag name="main"/>
+			<set-flag name="fpno"/>			
+		</rule>
+
+<!-- 
+		<rule name="Narrow Shake Flag">
+			<if technique="shake"/>
+			<unset-flag name="main"/>
+			<set-flag name="shak"/>			
+		</rule>
+
+		<rule name="Wide Shake Flag">
+			<if technique="tremolo"/>
+			<if technique="shake"/>
+			<unset-flag name="shak"/>
+			<unset-flag name="main"/>
+			<set-flag name="wshk"/>			
+		</rule>
+ -->
+
+		<rule name="Short Falls Flag">
+			<if technique="fall"/>
+			<unset-flag name="shak"/>
+			<unset-flag name="wshk"/>			
+			<unset-flag name="main"/>
+			<set-flag name="sfal"/>			
+		</rule>
+
+		<rule name="Long Falls Flag">
+			<if technique="lfal"/>
+			<unset-flag name="main"/>
+			<set-flag name="lfal"/>			
+		</rule>
+
+<!-- 
+		<rule name="Squeeze Flag">
+			<if condition="slide-up"/>
+			<unset-flag name="main"/>
+			<set-flag name="sqez"/>			
+		</rule>
+ -->
+
+<!-- 
+		<rule name="Muted Flag">
+			<if technique="muted"/>
+			<unset-flag name="main"/>
+			<set-flag name="mutd"/>			
+		</rule>
+
+		<rule name="Harmon Flag">
+			<if technique="hrmn"/>
+			<unset-flag name="main"/>
+			<set-flag name="harm"/>			
+		</rule>	
+
+		<rule name="Harmon Flag">
+			<if technique="hrmn"/>
+			<unset-flag name="main"/>
+			<set-flag name="harm"/>			
+		</rule>	
+ -->
+		
+								<!-- Trills Flags-->
+
+		<rule name="half step trill Flag">
+			<if technique="trhf" />
+			<unset-flag name="main"/>
+			<set-flag name="htrl"/>
+		</rule>
+
+		<rule name="whole step trill Flag">
+			<if technique="trwh"/>
+			<unset-flag name="main"/>
+			<set-flag name="wtrl"/>
+		</rule>
+
+								<!-- Pedals Flags-->
+		
+		<rule name="Pedal Flag">
+			<if note-symbol="diamond"/>
+			<unset-flag name="main"/>
+			<set-flag name="pedl"/>			
+		</rule>	
+
+
+<!-- End Flags -->
+				
+<!--Technique and Articulation Channel Changes-->		
+		
+		<rule name="Vibrato">
+			<if flag="vibr"/>
+			<channel-change channel="2"/>
+		</rule>
+		
+		<rule name="Staccato">
+			<if flag="stcc"/>
+			<channel-change channel="3"/>
+		</rule> 
+
+		<rule name="Staccatissimo">
+			<if flag="stco"/>
+			<channel-change channel="3"/>
+			<duration-change amount="0.3"/>
+		</rule> 
+		
+		<rule name="Dash">
+			<if flag="deta"/>
+			<channel-change channel="1"/>
+			<duration-change amount="0.7"/>
+		</rule>
+
+		<rule name="Dash">
+			<if flag="deta"/>
+			<if flag="vibr"/>
+			<duration-change amount="0.7"/>
+			<channel-change channel="2"/>
+		</rule>			
+
+		<rule name="Muted Dash">
+			<if flag="deta"/>
+			<if flag="harm"/>
+			<channel-change channel="1"/>
+			<duration-change amount="0.7"/>
+		</rule>
+
+							<!-- Accents Channel Changes and Mod-->
+
+		<rule name="Accent">
+			<if flag="acct"/>
+			<unset-flag name="main"/>
+			<channel-change channel="1"/>
+			<dynamic-change bump="1"/>
+		</rule>
+
+		<rule name="Strong Accent">
+			<if flag="sact"/>
+			<unset-flag name="main"/>
+			<channel-change channel="1"/>
+			<dynamic-change bump="3"/>
+			<cc controller="1" value="127" type="note-on-prefix" />
+		</rule>
+		
+		<rule name="Accent Staccato">
+			<if flag="acst"/>
+			<channel-change channel="3"/>
+			<dynamic-change bump="1"/>
+			<cc controller="1" value="127" type="note-on-prefix" />
+ 		</rule>
+
+		<rule name="Strong Accent Staccato">
+			<if flag="ssac"/>
+			<channel-change channel="3"/>
+			<dynamic-change bump="-2"/>
+		</rule>
+
+		<rule name="Accent Staccatissimo">
+			<if flag="acso"/>
+			<channel-change channel="4"/>
+			<duration-change amount="0.2"/>
+			<dynamic-change bump="-2"/>
+		</rule>
+
+		<rule name="Strong Accent Staccatissimo">
+			<if flag="ssso"/>
+			<channel-change channel="4"/>
+			<duration-change amount="0.1"/>
+			<dynamic-change bump="-1"/>
+		</rule>
+
+		<rule name="Accent Legato">
+			<if flag="lact"/>
+			<cc controller="1" value="100" type="note-on-suffix" />
+			<duration-change amount="0.78"/>
+			<channel-change channel="1"/>
+			<dynamic-change bump="1"/>
+		</rule>
+
+		<rule name="Strong Accent Legato">
+			<if flag="lsac"/>
+			<cc controller="1" value="127" type="note-on-prefix" />
+			<duration-change amount="0.78"/>
+			<channel-change channel="1"/>
+			<dynamic-change bump="1"/>
+		</rule>
+
+							<!--End Accents Channel Changes -->
+
+		<rule name="Mezzo Staccato">
+			<if flag="mstc"/>
+			<channel-change channel="1"/>
+			<duration-change amount="0.5"/>
+		</rule>
+
+		<rule name="Soft Start">
+			<if flag="strt"/>
+			<channel-change channel="1"/>
+			<dynamic-change bump="-1"/>
+			<cc controller="1" value="1" type="note-on-prefix" />
+			<cc controller="1" value="60" type="note-on-suffix" />
+		</rule>
+
+		<rule name="sFz short">
+			<if flag="sfzx"/>
+			<if duration-le="1.5"/>
+			<channel-change channel="5"/>
+		</rule>
+
+		<rule name="sFz long">
+			<if flag="sfzx"/>
+			<if duration-gt="1.5" />
+			<channel-change channel="6"/>
+		</rule>
+
+		<rule name="fP short">
+			<if flag="fpno"/>
+			<if duration-le="1.5"/>
+			<channel-change channel="5"/>
+		</rule>
+
+		<rule name="fP long">
+			<if flag="fpno"/>
+			<if duration-gt="1.5" />
+			<channel-change channel="6"/>
+		</rule>
+
+<!-- 
+		<rule name="Narrow Shake">
+			<if flag="shak"/>
+			<channel-change channel="7"/>
+		</rule>
+
+		<rule name="Wide Shakes">
+			<if flag="wshk"/>
+			<channel-change channel="8"/>
+		</rule>
+ -->
+
+		<rule name="Short Fall">
+			<if flag="sfal"/>
+			<channel-change channel="9"/>
+		</rule>
+
+		<rule name="Long Fall">
+			<if flag="lfal"/>
+			<channel-change channel="10"/>
+		</rule>
+
+		<rule name="Pedals">
+			<if flag="pedl"/>
+			<unset-flag name="main"/>
+			<channel-change channel="11"/>
+		</rule>	
+
+		<rule name="Staccato Pedals">
+			<if flag="pedl"/>
+			<if flag="stcc"/>
+			<unset-flag name="main"/>
+			<channel-change channel="12"/>
+		</rule>	
+
+<!-- 
+		<rule name="Squeeze">
+			<if flag="sqez"/>
+			<channel-change channel="11"/>
+		</rule>
+ -->
+
+<!-- 
+		<rule name="Harmon">
+			<if flag="harm"/>
+			<channel-change channel="12"/>
+		</rule>
+ -->
+
+<!-- 
+		<rule name="Harmon Staccato">
+			<if flag="harm"/>
+			<if flag="stcc"/>
+			<channel-change channel="13"/>
+		</rule>
+ -->
+
+<!-- 
+		<rule name="Harmon Accent Staccato">
+			<if flag="harm"/>
+			<if flag="acst"/>
+			<channel-change channel="14"/>
+			<dynamic-change bump="2"/>
+		</rule>
+ -->
+
+<!-- 
+		<rule name="Muted">
+			<if flag="mutd"/>
+			<channel-change channel="12"/>
+		</rule>
+ -->
+
+								<!-- Trills Mods-->
+
+		<rule name="half step trill Mod">
+			<if flag="htrl"/>
+			<channel-change channel="1"/>
+			<trill pitches="1" time="0.115" delay="0.3"/>
+		</rule>
+
+		<rule name="whole step trill Mod">
+			<if flag="wtrl"/>
+			<channel-change channel="1"/>
+			<trill pitches="2" time="0.105" delay="0.3"/>
+		</rule>
+
+<!-- 
+		<rule name="muted half step trill Mod">
+			<if flag="htrl"/>
+			<if flag="harm"/>
+			<channel-change channel="12"/>
+			<trill pitches="1" time="0.115" delay="0.3"/>
+		</rule>
+
+		<rule name="muted whole step trill Mod">
+			<if flag="wtrl"/>
+			<if flag="harm"/>
+			<channel-change channel="12"/>
+			<trill pitches="2" time="0.105" delay="0.3"/>
+		</rule>
+ -->
+
+								<!-- Slurs Mod -->
+
+		<rule name="slow first and last note of slur control Flag">
+			<if duration-ge="0.6"/>
+			<if condition="under-slur"/>
+			<if not-condition="slide-down"/>
+			<if not-condition="slide-up"/>
+			<if not-condition="slurred-release"/>
+			<if flag="main"/>
+			<unset-flag name="main"/>		
+			<set-flag name="slrr"/>		
+		</rule>
+
+		<rule name="slow slur cross-legato Flag">
+			<if duration-ge="0.6"/>
+			<if condition="slurred-attack"/>
+			<if not-condition="slide-down"/>
+			<if not-condition="slide-up"/>
+			<if flag="main"/>
+			<unset-flag name="main"/>		
+			<set-flag name="slra"/>		
+		</rule>
+
+		<rule name="fast first and last note of slur control Flag">
+			<if duration-lt="0.6" />
+			<if condition="under-slur"/>
+			<if not-condition="slide-down"/>
+			<if not-condition="slide-up"/>
+			<if not-condition="slurred-release"/>
+			<if flag="main"/>
+			<unset-flag name="main"/>		
+			<set-flag name="slrf"/>		
+		</rule>
+
+		<rule name="fast slur cross-legato Flag">
+			<if duration-lt="0.6" />
+			<if condition="slurred-attack"/>
+			<if not-condition="slide-down"/>
+			<if not-condition="slide-up"/>
+			<if flag="main"/>
+			<unset-flag name="main"/>		
+			<set-flag name="slaf"/>		
+		</rule>
+
+								<!-- Slurs Control -->
+
+		<rule name="slow slur KS">
+			<if flag="slrr"/>
+			<unset-flag name="main"/>		
+			<duration-change amount="0.99"/>
+		</rule>
+
+		<rule name="slow slur KS">
+			<if flag="slra"/>
+			<unset-flag name="main"/>		
+		</rule>		 
+	
+		<rule name="fast slur KS">
+			<if flag="slrf"/>
+			<unset-flag name="main"/>		
+			<duration-change amount="1.03"/>
+		</rule>
+
+		<rule name="fast slur KS">
+			<if flag="slaf"/>
+			<unset-flag name="main"/>		
+ 			<duration-change amount="1.09"/>
+		</rule>	
+
+
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+
+		
+		<rule name="Euphonium - main sound">
+			<if flag="main"/>
+			<channel-change channel="1"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>

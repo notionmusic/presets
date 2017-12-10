@@ -1,0 +1,223 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="rubs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="87" />
+		<dynamic dynamic="f"    value="91" />
+		<dynamic dynamic="ff"   value="98" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="112" />
+		<dynamic dynamic="fffff" value="125" />
+	</dynamic-map>
+
+    <dynamic-map id="rbbs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="rubs" /> 
+			<hairpin-map id="rubs" />
+			<hairpin-cc value="11" />
+			<!-- <hairpin-anchor value="69" />  -->
+		</setup>
+		
+<!-- Main Rule -->
+		
+		<rule name="VET FE helix bowl - main sound">
+			<set-flag name="main"/>
+		</rule>
+
+<!-- Accents Rule -->
+
+		<rule name="All Accents">
+			<if articulation="accent"/>
+			<dynamic-change bump="1"/>
+		</rule>
+
+<!-- Technique Flags -->
+
+		<rule name="helix bowl - Hit 1 Flag">
+			<if note-symbol="x"/>
+			<if pitch="a4"/>
+			<component id="1"/>
+			<unset-flag name="main"/>
+			<set-flag name="hit1"/>
+		</rule>
+
+		<rule name="helix bowl - Hit 2 Flag">
+			<if note-symbol="x"/>
+			<if pitch="b4"/>
+			<component id="2"/>
+			<unset-flag name="main"/>
+			<set-flag name="hit2"/>
+		</rule>
+
+		<rule name="helix bowl - Hit 3 Flag">
+			<if note-symbol="x"/>
+			<if pitch="c5"/>
+			<component id="3"/>
+			<unset-flag name="main"/>
+			<set-flag name="hit3"/>
+		</rule>
+
+		<rule name="helix bowl - Muted Hit Flag">
+			<if note-symbol="x"/>
+			<if technique="mute"/>
+			<if pitch="a4"/>
+			<component id="4"/>
+			<unset-flag name="main"/>
+			<set-flag name="mhit"/>
+		</rule>
+ 
+		<rule name="helix bowl - Muted Hit 2 Flag">
+			<if note-symbol="x"/>
+			<if technique="mute"/>
+			<if pitch="b4"/>
+			<component id="5"/>
+			<unset-flag name="main"/>
+			<set-flag name="mht2"/>
+		</rule>
+		
+		<rule name="helix bowl - Muted Hit 3 Flag">
+			<if note-symbol="x"/>
+			<if technique="mute"/>
+			<if pitch="c5"/>
+			<component id="6"/>
+			<unset-flag name="main"/>
+			<set-flag name="mht3"/>
+		</rule>
+
+		<rule name="helix bowl - Spring Hit Flag">
+			<if technique="nvib"/>
+			<component id="7"/>
+			<unset-flag name="main"/>
+			<set-flag name="sprg"/>
+		</rule>
+
+		<rule name="helix bowl - Spring Hit Vib Flag">
+			<if technique="vibe"/>
+			<if pitch="a4"/>
+			<component id="8"/>
+			<unset-flag name="main"/>
+			<set-flag name="sprv"/>
+		</rule>
+
+		<rule name="helix bowl - Spring Hit Vib 2 Flag">
+			<if technique="vibe"/>
+			<if pitch="b4"/>
+			<unset-flag name="main"/>
+			<set-flag name="spv2"/>
+		</rule>
+
+		<rule name="helix bowl - Spring Hit Vib 3 Flag">
+			<if technique="vibe"/>
+			<if pitch="c5"/>
+			<unset-flag name="main"/>
+			<set-flag name="spv3"/>
+		</rule>
+
+		<rule name="helix bowl - Spring Hit Vib 3 Flag">
+			<if technique="mvib"/>
+			<if pitch="c5"/>
+			<unset-flag name="main"/>
+			<set-flag name="spv4"/>
+		</rule>
+
+		<rule name="helix bowl - Scrape Flag">
+			<if technique="scra"/>
+			<unset-flag name="main"/>
+			<set-flag name="scrp"/>
+		</rule>
+
+<!-- helix bowl Technique Changes -->
+
+		<rule name="helix bowl - Hit 1">
+			<if flag="hit1"/>
+			<fixed-pitch pitch="c4"/>
+		</rule>
+
+		<rule name="helix bowl - Hit 2">
+			<if flag="hit2"/>
+			<fixed-pitch pitch="d4"/>
+		</rule>
+
+		<rule name="helix bowl - Hit 3">
+			<if flag="hit3"/>
+			<fixed-pitch pitch="e4"/>
+		</rule>
+
+		<rule name="helix bowl - Muted Hit 1">
+			<if flag="mhit"/>
+			<fixed-pitch pitch="f4"/>
+		</rule>
+
+		<rule name="helix bowl - Muted Hit 2">
+			<if flag="mht2"/>
+			<fixed-pitch pitch="g4"/>
+		</rule>
+			
+		<rule name="helix bowl - Muted Hit 3">
+			<if flag="mht3"/>
+			<fixed-pitch pitch="a4"/>
+		</rule>
+
+		<rule name="helix bowl - Spring Hit no Vib">
+			<if flag="sprg"/>
+			<fixed-pitch pitch="c5"/>
+		</rule>
+
+		<rule name="helix bowl - Spring Hit Vib 1">
+			<if flag="sprv"/>
+			<fixed-pitch pitch="d5"/>
+		</rule>
+
+		<rule name="helix bowl - Spring Hit Vib 2">
+			<if flag="spv2"/>
+			<fixed-pitch pitch="e5"/>
+		</rule>
+
+		<rule name="helix bowl - Spring Hit Vib 3">
+			<if flag="spv3"/>
+			<fixed-pitch pitch="f5"/>
+		</rule>
+
+		<rule name="helix bowl - Spring Hit Vib 4">
+			<if flag="spv4"/>
+			<fixed-pitch pitch="g5"/>
+		</rule>
+
+		<rule name="helix bowl - Spring Hit Vib 4">
+			<if flag="scrp"/>
+			<fixed-pitch pitch="a5"/>
+		</rule>
+
+		
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+
+		
+		<rule name="helix bowl Clap - Hit 1 main sound">
+			<if flag="main"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>

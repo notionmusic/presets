@@ -1,0 +1,131 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="rubs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="87" />
+		<dynamic dynamic="f"    value="91" />
+		<dynamic dynamic="ff"   value="98" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="112" />
+		<dynamic dynamic="fffff" value="125" />
+	</dynamic-map>
+
+    <dynamic-map id="rbbs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="rubs" /> 
+			<hairpin-map id="rubs" />
+			<hairpin-cc value="11" />
+			<!-- <hairpin-anchor value="69" />  -->
+		</setup>
+		
+<!-- Main Rule -->
+		
+		<rule name="VET FE Cajon - main sound">
+			<set-flag name="main"/>
+		</rule>
+
+<!-- Accents Rule -->
+
+		<rule name="All Accents">
+			<if articulation="accent"/>
+			<dynamic-change bump="1"/>
+		</rule>
+
+<!-- Component Pitch Set-->
+
+		<rule name="Cajon Lo Hit">
+			<if pitch="a4"/>
+			<component id="1"/>
+			<unset-flag name="main"/>
+			<set-flag name="lbon"/>
+		</rule>
+
+		<rule name="Cajon Hi Hit">
+			<if pitch="c5"/>
+			<component id="2"/>
+			<unset-flag name="main"/>
+			<unset-flag name="lbon"/>
+			<set-flag name="hbon"/>
+		</rule>
+
+
+<!-- Transpositions for techniques-->
+
+		<rule name="Cajon Lo Hit">
+			<if flag="lbon"/>
+			<if pitch="a4"/>
+			<fixed-pitch pitch="c4"/>
+		</rule>
+
+		<rule name="Cajon Low Dead Stroke Hit">
+			<if flag="lbon"/>
+			<if note-symbol="x"/>
+			<fixed-pitch pitch="e4"/>
+		</rule>
+
+		<rule name="Cajon Low Slap">
+			<if flag="lbon"/>
+			<if note-symbol="diamond"/>
+			<fixed-pitch pitch="a4"/>
+		</rule>
+
+		<rule name="Cajon Hi Hit">
+			<if flag="hbon"/>
+			<if pitch="c5"/>
+			<fixed-pitch pitch="d4"/>
+		</rule>
+
+		<rule name="Cajon Hi Dead Stroke Hit">
+			<if flag="hbon"/>
+			<if note-symbol="x"/>
+			<fixed-pitch pitch="f4"/>
+		</rule>
+
+		<rule name="Cajon High Knock Hit">
+			<if flag="hbon"/>
+			<if note-symbol="circle x"/>
+			<fixed-pitch pitch="g4"/>
+		</rule>
+
+		<rule name="Cajon High Slap">
+			<if flag="hbon"/>
+			<if note-symbol="diamond"/>
+			<fixed-pitch pitch="b4"/>
+		</rule>
+
+
+
+
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+
+		
+		<rule name="Cajon- main sound">
+			<if flag="main"/>
+			<channel-change channel="1"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>

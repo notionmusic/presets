@@ -1,0 +1,750 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="rubs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+    <dynamic-map id="rbbs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="rubs" /> 
+			<hairpin-map id="rubs" />
+			<hairpin-cc value="11" />
+			<!-- <hairpin-anchor value="69" />  -->
+		</setup>
+		
+<!-- Main Rule -->
+		
+		<rule name="Tenor Drums - main sound">
+			<set-flag name="main"/>
+		</rule>
+
+<!-- Accents Rule -->
+
+		<rule name="All Accents">
+			<if articulation="accent"/>
+			<velocity-change bump="127"/>
+		</rule>
+
+<!-- Tenor Drum Stick Type Channel Changes -->
+
+		<rule name="Tenor Drums - Nylon Sticks">
+			<if technique="hmal"/>
+			<unset-flag name="main"/>
+			<set-flag name="nstk"/>
+			<channel-change channel="1"/>
+		</rule>
+
+		<rule name="Tenor Drums - Nylon Sticks">
+			<if technique="stck"/>
+			<unset-flag name="main"/>
+			<set-flag name="nstx"/>
+			<fixed-pitch pitch="c8"/>
+		</rule>
+
+		<rule name="Tenor Drums - Puffy Sticks">
+			<if technique="smal"/>
+			<unset-flag name="main"/>
+			<set-flag name="pstk"/>
+			<channel-change channel="3"/>
+		</rule>
+
+		<rule name="Tenor Drums - Rubber Bead Sticks">
+			<if technique="cmal"/>
+			<unset-flag name="main"/>
+			<set-flag name="rstk"/>
+			<channel-change channel="5"/>
+		</rule>
+
+		<rule name="Tenor Drums - Brushes">
+			<if technique="brsh"/>
+			<unset-flag name="main"/>
+			<set-flag name="brsh"/>
+		</rule>
+
+		<rule name="Tenor Drums - Rolls Nylon Sticks">
+			<if technique="trem"/>
+			<if flag="nstk"/>
+			<unset-flag name="main"/>
+			<set-flag name="ntrm"/>
+		</rule>
+
+		<rule name="Tenor Drums - Rolls Puffy Sticks">
+			<if technique="trem"/>
+			<if flag="pstk"/>
+			<unset-flag name="main"/>
+			<set-flag name="ptrm"/>
+		</rule>
+
+
+<!-- Tenor Drum Techniques -->
+
+		<rule name="Tenor Drums - Rim Clicks">
+			<if note-symbol="x"/>
+			<unset-flag name="main"/>
+			<set-flag name="rclk"/>
+		</rule>
+
+		<rule name="Tenor Drums - Rim Shots">
+			<if technique="rmsh"/>
+			<if note-symbol="x"/>
+			<unset-flag name="main"/>
+			<unset-flag name="rclk"/>
+			<set-flag name="rsht"/>
+		</rule>
+
+		<rule name="Tenor Drums - Flams w/ Technique">
+			<if technique="flam"/>
+			<unset-flag name="main"/>
+			<set-flag name="flam"/>
+		</rule>
+
+		<rule name="Tenor Drums - Flams w/ Note-head Triangle">
+			<if note-symbol="triangle"/>
+			<unset-flag name="main"/>
+			<set-flag name="tflm"/>
+		</rule>
+		
+		<rule name="Tenor Drums - Short Buzz">
+			<if note-symbol="circle x"/>
+			<unset-flag name="main"/>
+			<set-flag name="buzz"/>
+		</rule>
+
+		<rule name="Tenor Drums - Shell Clicks">
+			<if note-symbol="diamond"/>
+			<unset-flag name="main"/>
+			<set-flag name="sclk"/>
+		</rule>
+
+		
+
+<!-- Pitch Set Drum Size -->
+
+			<!-- 14in -->
+
+		<rule name="Tenor Drums - Drum 4">
+			<if pitch="f4"/>
+			<set-flag name="d4f4"/>
+		</rule>
+			
+			<!-- 13in -->
+
+		<rule name="Tenor Drums - Drum 3">
+			<if pitch="a4"/>
+			<set-flag name="d3a4"/>
+		</rule>
+
+			<!-- 12in -->
+
+		<rule name="Tenor Drums - Drum 2">
+			<if pitch="c5"/>
+			<set-flag name="d2c5"/>
+		</rule>
+			
+			<!-- 10in -->
+
+		<rule name="Tenor Drums - Drum 1">
+			<if pitch="e5"/>
+			<set-flag name="d1e5"/>
+		</rule>
+
+			<!-- 8in -->
+
+		<rule name="Tenor Drums - Lo Quint">
+			<if pitch="f5"/>
+			<set-flag name="lqf5"/>
+		</rule>
+
+			<!-- 6in -->
+
+		<rule name="Tenor Drums - Hi Quint">
+			<if pitch="g5"/>
+			<set-flag name="hqg5"/>
+		</rule>
+
+<!--Set Component Id's -->
+
+		<rule name="Tenor Drums - Drum 4">
+			<if flag="d4f4"/>
+			<component id="1"/>
+		</rule>
+			
+			<!-- 13in -->
+
+		<rule name="Tenor Drums - Drum 3">
+			<if flag="d3a4"/>
+			<component id="2"/>
+		</rule>
+
+			<!-- 12in -->
+
+		<rule name="Tenor Drums - Drum 2">
+			<if flag="d2c5"/>
+			<component id="3"/>
+		</rule>
+			
+			<!-- 10in -->
+
+		<rule name="Tenor Drums - Drum 1">
+			<if flag="d1e5"/>
+			<component id="4"/>
+		</rule>
+
+			<!-- 8in -->
+
+		<rule name="Tenor Drums - Lo Quint">
+			<if flag="lqf5"/>
+			<component id="5"/>
+		</rule>
+
+			<!-- 6in -->
+
+		<rule name="Tenor Drums - Hi Quint">
+			<if flag="hqg5"/>
+			<component id="6"/>
+		</rule>
+
+<!--Techniques for Pitches and Transposition -->
+
+			<!-- 14in -->
+
+		<rule name="Tenor Drums - Drum 4 - main">
+			<if component="1"/>
+			<fixed-pitch pitch="g3"/>
+			<set-flag name="mane"/>
+		</rule>
+		
+		<rule name="Tenor Drums - Drum 4 - rim clicks">
+			<if component="1"/>
+			<if flag="rclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-31"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 4 - rim shots">
+			<if component="1"/>
+			<if flag="rsht"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 4 - flam notehead">
+			<if component="1"/>
+			<if flag="tflm"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="flam"/>
+			<transpose halfsteps="14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 4 - flam technique">
+			<if component="1"/>
+			<if flag="flam"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="tflm"/>
+			<transpose halfsteps="14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 4 - buzz">
+			<if component="1"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="29"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 4 - shell clicks">
+			<if component="1"/>
+			<if flag="sclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="41"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 4 - nylon open roll">
+			<if component="1"/>
+			<if flag="ntrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="9"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 4 - nylon buzz roll">
+			<if component="1"/>
+			<if flag="ntrm"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="-41"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 4 - puffy open roll">
+			<if component="1"/>
+			<if flag="ptrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="4"/>
+			<transpose halfsteps="9"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 4 - brushes">
+			<if component="1"/>
+			<if flag="brsh"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="6"/>
+		</rule>
+
+			<!-- 13in -->
+
+		<rule name="Tenor Drums - Drum 3 - main">
+			<if component="2"/>
+			<fixed-pitch pitch="a3"/>
+			<set-flag name="mane"/>
+		</rule>
+		
+		<rule name="Tenor Drums - Drum 3 - rim clicks">
+			<if component="2"/>
+			<if flag="rclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-31"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 3 - rim shots">
+			<if component="2"/>
+			<if flag="rsht"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 3 - flam notehead">
+			<if component="2"/>
+			<if flag="tflm"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="flam"/>
+			<transpose halfsteps="15"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 3 - flam technique">
+			<if component="2"/>
+			<if flag="flam"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="tflm"/>
+			<transpose halfsteps="15"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 3 - buzz">
+			<if component="2"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="29"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 3 - shell clicks">
+			<if component="2"/>
+			<if flag="sclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="41"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 3 - nylon open roll">
+			<if component="2"/>
+			<if flag="ntrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="8"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 3 - nylon buzz roll">
+			<if component="2"/>
+			<if flag="ntrm"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="-41"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 3 - puffy open roll">
+			<if component="2"/>
+			<if flag="ptrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="4"/>
+			<transpose halfsteps="8"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 3 - brushes">
+			<if component="2"/>
+			<if flag="brsh"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="6"/>
+		</rule>
+
+			<!-- 12in -->
+
+		<rule name="Tenor Drums - Drum 2 - main">
+			<if component="3"/>
+			<fixed-pitch pitch="c4"/>
+			<set-flag name="mane"/>
+		</rule>
+		
+		<rule name="Tenor Drums - Drum 2 - rim clicks">
+			<if component="3"/>
+			<if flag="rclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-31"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 2 - rim shots">
+			<if component="3"/>
+			<if flag="rsht"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 2 - flam notehead">
+			<if component="3"/>
+			<if flag="tflm"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="flam"/>
+			<transpose halfsteps="14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 2 - flam technique">
+			<if component="3"/>
+			<if flag="flam"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="tflm"/>
+			<transpose halfsteps="14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 2 - buzz">
+			<if component="3"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="28"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 2 - shell clicks">
+			<if component="3"/>
+			<if flag="sclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="40"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 2 - nylon open roll">
+			<if component="3"/>
+			<if flag="ntrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="7"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 2 - nylon buzz roll">
+			<if component="3"/>
+			<if flag="ntrm"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="-40"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 2 - puffy open roll">
+			<if component="3"/>
+			<if flag="ptrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="4"/>
+			<transpose halfsteps="7"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 2 - brushes">
+			<if component="3"/>
+			<if flag="brsh"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="6"/>
+		</rule>
+
+			<!-- 10in -->
+
+		<rule name="Tenor Drums - Drum 1 - main">
+			<if component="4"/>
+			<fixed-pitch pitch="d4"/>
+			<set-flag name="mane"/>
+		</rule>
+		
+		<rule name="Tenor Drums - Drum 1 - rim clicks">
+			<if component="4"/>
+			<if flag="rclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-31"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 1 - rim shots">
+			<if component="4"/>
+			<if flag="rsht"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 1 - flam notehead">
+			<if component="4"/>
+			<if flag="tflm"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="flam"/>
+			<transpose halfsteps="15"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 1 - flam technique">
+			<if component="4"/>
+			<if flag="flam"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="tflm"/>
+			<transpose halfsteps="15"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 1 - buzz">
+			<if component="4"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="27"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 1 - shell clicks">
+			<if component="4"/>
+			<if flag="sclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="39"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 1 - nylon open roll">
+			<if component="4"/>
+			<if flag="ntrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="7"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 1 - nylon buzz roll">
+			<if component="4"/>
+			<if flag="ntrm"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="-39"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 1 - puffy open roll">
+			<if component="4"/>
+			<if flag="ptrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="4"/>
+			<transpose halfsteps="7"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Drum 1 - brushes">
+			<if component="4"/>
+			<if flag="brsh"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="6"/>
+		</rule>
+
+			<!-- 8in -->
+
+		<rule name="Tenor Drums - Lo Quint - main">
+			<if component="5"/>
+			<fixed-pitch pitch="f4"/>
+			<set-flag name="mane"/>
+		</rule>
+		
+		<rule name="Tenor Drums - Lo Quint - rim clicks">
+			<if component="5"/>
+			<if flag="rclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-32"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Lo Quint - rim shots">
+			<if component="5"/>
+			<if flag="rsht"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-15"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Lo Quint - flam notehead">
+			<if component="5"/>
+			<if flag="tflm"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="flam"/>
+			<transpose halfsteps="14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Lo Quint - flam technique">
+			<if component="5"/>
+			<if flag="flam"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="tflm"/>
+			<transpose halfsteps="14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Lo Quint - buzz">
+			<if component="5"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="26"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Lo Quint - shell clicks">
+			<if component="5"/>
+			<if flag="sclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="38"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Lo Quint - nylon open roll">
+			<if component="5"/>
+			<if flag="ntrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="6"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Lo Quint - nylon buzz roll">
+			<if component="5"/>
+			<if flag="ntrm"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="-38"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Lo Quint - puffy open roll">
+			<if component="5"/>
+			<if flag="ptrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="4"/>
+			<transpose halfsteps="6"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Lo Quint - brushes">
+			<if component="5"/>
+			<if flag="brsh"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="6"/>
+		</rule>
+
+			<!-- 6in -->
+
+		<rule name="Tenor Drums - Hi Quint - main">
+			<if component="6"/>
+			<fixed-pitch pitch="g4"/>
+			<set-flag name="mane"/>
+		</rule>
+		
+		<rule name="Tenor Drums - Hi Quint - rim clicks">
+			<if component="6"/>
+			<if flag="rclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-31"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Hi Quint - rim shots">
+			<if component="6"/>
+			<if flag="rsht"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="-14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Hi Quint - flam notehead">
+			<if component="6"/>
+			<if flag="tflm"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="flam"/>
+			<transpose halfsteps="14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Hi Quint - flam technique">
+			<if component="6"/>
+			<if flag="flam"/>
+			<unset-flag name="mane"/>
+			<unset-flag name="tflm"/>
+			<transpose halfsteps="14"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Hi Quint - buzz">
+			<if component="6"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="26"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Hi Quint - shell clicks">
+			<if component="6"/>
+			<if flag="sclk"/>
+			<unset-flag name="mane"/>
+			<transpose halfsteps="38"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Hi Quint - nylon open roll">
+			<if component="6"/>
+			<if flag="ntrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="5"/> 
+		</rule>
+		<rule name="Tenor Drums - Hi Quint - nylon buzz roll">
+			<if component="6"/>
+			<if flag="ntrm"/>
+			<if flag="buzz"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="2"/>
+			<transpose halfsteps="-38"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Hi Quint - puffy open roll">
+			<if component="6"/>
+			<if flag="ptrm"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="4"/>
+			<transpose halfsteps="5"/> 
+		</rule>
+
+		<rule name="Tenor Drums - Hi Quint - brushes">
+			<if component="6"/>
+			<if flag="brsh"/>
+			<unset-flag name="mane"/>
+			<channel-change channel="6"/>
+		</rule>
+		
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+
+		
+		<rule name="Tenor Drums - main sound">
+			<if flag="main"/>
+			<channel-change channel="1"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>

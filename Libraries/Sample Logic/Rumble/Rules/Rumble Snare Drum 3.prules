@@ -1,0 +1,245 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="rmbl">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+    <dynamic-map id="rmb2">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="38" />
+		<dynamic dynamic="ppp"  value="43" />
+		<dynamic dynamic="pp"   value="48" />
+		<dynamic dynamic="p"    value="56" />
+		<dynamic dynamic="mp"   value="63" />
+		<dynamic dynamic="mf"   value="70" />
+		<dynamic dynamic="f"    value="80" />
+		<dynamic dynamic="ff"   value="92" />
+		<dynamic dynamic="fff"  value="104" />
+		<dynamic dynamic="ffff" value="112" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="rmbl" /> 
+			<hairpin-map id="rmb2" />
+			<hairpin-cc value="7" />
+		</setup>
+
+
+<!-- Technique Flags -->
+		
+		<rule name="Snare Drum Main">
+			<set-flag name="main"/>
+		</rule>
+
+		<rule name="Snare Drum - Accent">
+			<if articulation="accent"/>
+			<set-flag name="acct"/>
+			<velocity-change bump="127"/>
+		</rule>
+
+		<rule name="Snare Drum - Brushes">
+			<if technique="brsh"/>
+			<unset-flag name="main"/>
+			<set-flag name="brsh"/>
+			<channel-change channel="5"/>
+			<fixed-pitch pitch="g3"/>
+		</rule>
+
+		<rule name="Snare Drum - Brushes Flam">
+			<if flag="brsh"/>
+			<if note-symbol="triangle"/>
+			<set-flag name="brsh"/>
+			<channel-change channel="5"/>
+			<fixed-pitch pitch="c4"/>
+		</rule>
+
+		<rule name="Snare Drum - Brushes Flam">
+			<if flag="brsh"/>
+			<if flag="flam"/>
+			<set-flag name="brsh"/>
+			<channel-change channel="5"/>
+			<fixed-pitch pitch="c4"/>
+		</rule>
+
+		<rule name="Snare Drum - Pings">
+			<if technique="circ"/>
+			<unset-flag name="brsh"/>
+			<unset-flag name="main"/>
+			<set-flag name="ping"/>
+			<fixed-pitch pitch="f3"/>
+		</rule>
+
+		<rule name="Snare Drum - Rim Shots">
+			<if note-symbol="x"/>
+			<if technique="rmsh"/>
+			<unset-flag name="ping"/>
+			<unset-flag name="brsh"/>
+			<unset-flag name="main"/>
+			<set-flag name="rimx"/>
+			<fixed-pitch pitch="a3"/>
+		</rule>
+
+		<rule name="Snare Drum - Rim Clicks">
+			<if note-symbol="x"/>
+			<if not-technique="rmsh"/>
+			<unset-flag name="ping"/>
+			<unset-flag name="brsh"/>
+			<unset-flag name="rimx"/>
+			<unset-flag name="main"/>
+			<set-flag name="rimc"/>
+			<fixed-pitch pitch="c3"/>
+		</rule>
+
+		<rule name="Snare Drum - Shell Clicks">
+			<if note-symbol="diamond"/>
+			<unset-flag name="brsh"/>
+			<unset-flag name="main"/>
+			<set-flag name="sclx"/>
+			<fixed-pitch pitch="d3"/>
+		</rule>
+
+		<rule name="Snare Drum - Flam Note-head">
+			<if note-symbol="triangle"/>
+			<unset-flag name="main"/>
+			<set-flag name="flam"/>
+			<fixed-pitch pitch="c4"/>
+		</rule>
+
+		<rule name="Snare Drum - Flam Technique">
+			<if technique="flam"/>
+			<unset-flag name="main"/>
+			<set-flag name="flam"/>
+			<fixed-pitch pitch="c4"/>
+		</rule>
+
+		<rule name="Snare Drum - Ruffs">
+			<if note-symbol="slashed"/>
+			<unset-flag name="brsh"/>
+			<unset-flag name="main"/>
+			<set-flag name="ruff"/>
+			<fixed-pitch pitch="d4"/>
+		</rule>
+
+		<rule name="Snare Drum - Ruffs">
+			<if technique="ruff"/>
+			<unset-flag name="brsh"/>
+			<unset-flag name="main"/>
+			<set-flag name="ruf2"/>
+			<fixed-pitch pitch="d4"/>
+		</rule>
+
+		<rule name="Snare Drum - Buzz Flag">
+			<if note-symbol="circle x"/>
+			<unset-flag name="brsh"/>
+			<unset-flag name="main"/>
+			<unset-flag name="ruff"/>
+			<set-flag name="buzz"/>
+		</rule>
+
+		<rule name="Snare Drum - Short Buzz">
+			<if flag="buzz"/>
+			<unset-flag name="brsh"/>
+			<if duration-le="0.25"/>
+			<fixed-pitch pitch="f4"/>
+		</rule>
+
+		<rule name="Snare Drum - Short Sustain Buzz">
+			<if flag="buzz"/>
+			<unset-flag name="brsh"/>
+			<if duration-gt="0.25"/>
+			<if duration-lt="1"/>
+			<fixed-pitch pitch="g4"/>
+		</rule>
+
+		<rule name="Snare Drum - Medium Sustain Buzz">
+			<if flag="buzz"/>
+			<unset-flag name="brsh"/>
+			<if duration-ge="1"/>
+			<fixed-pitch pitch="a4"/>
+		</rule>
+
+		<rule name="Snare Drum - Sticks">
+			<if technique="stck"/>
+			<if note-symbol="x"/>
+			<unset-flag name="brsh"/>
+			<unset-flag name="main"/>
+			<unset-flag name="rimx"/>
+			<unset-flag name="ruff"/>
+			<unset-flag name="flam"/>
+			<set-flag name="stik"/>
+		</rule>
+
+		<rule name="Snare Drum - Sticks">
+			<if flag="stik"/>
+			<unset-flag name="brsh"/>
+			<fixed-pitch pitch="g5"/>
+		</rule>
+
+		<rule name="Snare Drum - Buzz Roll Rolls">
+			<if technique="trem"/>
+			<if technique="ruff"/>
+			<unset-flag name="brsh"/>
+			<unset-flag name="main"/>
+			<unset-flag name="rimx"/>
+			<unset-flag name="ruff"/>
+			<unset-flag name="flam"/>
+			<unset-flag name="stik"/>
+			<set-flag name="roll"/>
+		</rule>
+
+		<rule name="Snare Drum - Open Roll Rolls">
+			<if technique="trem"/>
+			<if not-technique="ruff"/>
+			<unset-flag name="brsh"/>
+			<unset-flag name="main"/>
+			<unset-flag name="rimx"/>
+			<unset-flag name="ruff"/>
+			<unset-flag name="flam"/>
+			<unset-flag name="stik"/>
+			<unset-flag name="roll"/>
+			<set-flag name="rol2"/>
+		</rule>
+
+		<rule name="Snare Drum - Sticks">
+			<if flag="roll"/>
+			<unset-flag name="brsh"/>
+			<channel-change channel="2"/>
+			<fixed-pitch pitch="c6"/>
+		</rule>
+
+		<rule name="Snare Drum - Sticks">
+			<if flag="rol2"/>
+			<unset-flag name="brsh"/>
+			<channel-change channel="2"/>
+			<fixed-pitch pitch="d6"/>
+		</rule>
+
+
+
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+		
+		
+		<rule name="Snare Drum - main sound">
+			<if flag="main"/>
+			<channel-change channel="1"/>
+			<fixed-pitch pitch="g3"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>

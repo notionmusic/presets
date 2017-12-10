@@ -1,0 +1,120 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="rubs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="87" />
+		<dynamic dynamic="f"    value="91" />
+		<dynamic dynamic="ff"   value="98" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="112" />
+		<dynamic dynamic="fffff" value="125" />
+	</dynamic-map>
+
+    <dynamic-map id="rbbs">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="rubs" /> 
+			<hairpin-map id="rubs" />
+			<hairpin-cc value="11" />
+			<!-- <hairpin-anchor value="69" />  -->
+		</setup>
+		
+<!-- Main Rule -->
+		
+		<rule name="VET FE Zill Bells - main sound">
+			<set-flag name="main"/>
+		</rule>
+
+<!-- Accents Rule -->
+
+		<rule name="All Accents">
+			<if articulation="accent"/>
+			<dynamic-change bump="1"/>
+		</rule>
+
+<!-- Swish Knocker Flags -->
+
+		<rule name="Swish Knocker - Hit 1">
+			<if pitch="a4"/>
+			<component id="1"/>
+			<set-flag name="hit1"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Swish Knocker - Hit 2">
+			<if pitch="c5"/>
+			<component id="2"/>
+			<set-flag name="hit2"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Swish Knocker - Bowed">
+			<if technique="bowd"/>
+			<component id="3"/>
+			<set-flag name="bwd1"/>
+			<unset-flag name="main"/>
+		</rule>
+
+		<rule name="Swish Knocker - Bowed Note-Head Option">
+			<if note-symbol="circle x"/>
+			<component id="3"/>
+			<set-flag name="bwd2"/>
+			<unset-flag name="main"/>
+		</rule>
+
+<!-- Swish Knocker Techniques -->
+
+		<rule name="Swish Knocker Hit 1">
+			<if flag="hit1"/>
+			<fixed-pitch pitch="c4"/>
+		</rule>
+
+		<rule name="Swish Knocker - Hit 2">
+			<if flag="hit2"/>
+			<fixed-pitch pitch="d4"/>
+		</rule>
+
+		<rule name="Swish Knocker - Bowed">
+			<if flag="bwd1"/>
+			<fixed-pitch pitch="f4"/>
+		</rule>
+
+		<rule name="Swish Knocker - Bowed Option">
+			<if flag="bwd2"/>
+			<fixed-pitch pitch="f4"/>
+		</rule>
+
+
+
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+
+		
+		<rule name="Swish Knocker - main sound">
+			<if flag="main"/>
+			<channel-change channel="1"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>

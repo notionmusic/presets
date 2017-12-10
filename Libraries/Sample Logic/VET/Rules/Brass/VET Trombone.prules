@@ -1,0 +1,135 @@
+<?xml version="2.0" ?>
+<rule-set version="2">
+
+	<rules>
+
+    <dynamic-map id="fntp">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+    <dynamic-map id="fftp">
+		<dynamic dynamic="ppppp" value="1" />
+		<dynamic dynamic="pppp" value="12" />
+		<dynamic dynamic="ppp"  value="24" />
+		<dynamic dynamic="pp"   value="36" />
+		<dynamic dynamic="p"    value="48" />
+		<dynamic dynamic="mp"   value="60" />
+		<dynamic dynamic="mf"   value="69" />
+		<dynamic dynamic="f"    value="81" />
+		<dynamic dynamic="ff"   value="93" />
+		<dynamic dynamic="fff"  value="105" />
+		<dynamic dynamic="ffff" value="117" />
+		<dynamic dynamic="fffff" value="127" />
+	</dynamic-map>
+
+		<setup>
+			<velocity-map id="fftp" /> 
+			<hairpin-map id="fntp" />
+			<hairpin-cc value="11" />
+			<hairpin-anchor value="69" /> 
+		</setup>
+
+
+<!-- Technique Flags -->
+		
+		<rule name="Trombone - main sound is Marcato">
+			<if flag="main"/>
+			<set-flag name="main"/>
+		</rule>
+
+		<rule name="Slide Up Flag"> 
+			<if condition="slide-up"/> 
+			<unset-flag name="main"/>
+			<set-flag name="slup"/>
+		</rule> 
+
+		<rule name="Slide Down Flag"> 
+			<if condition="slide-down"/> 
+			<unset-flag name="main"/>
+			<set-flag name="sldn"/>
+		</rule> 
+
+		<rule name="Slide Up Trem Flag"> 
+			<if technique="trem"/>
+			<if condition="slide-up"/> 
+			<unset-flag name="main"/>
+			<set-flag name="stup"/>
+		</rule> 
+
+		<rule name="Slide Down Trem Flag"> 
+			<if technique="trem"/>
+			<if condition="slide-down"/> 
+			<unset-flag name="main"/>
+			<set-flag name="stdn"/>
+		</rule> 
+
+		<rule name="Slide Up Fluttertongue Flag"> 
+			<if technique="flut"/>
+			<if condition="slide-up"/> 
+			<unset-flag name="main"/>
+			<set-flag name="sfup"/>
+		</rule> 
+
+		<rule name="Slide Down Fluttertongue Flag"> 
+			<if technique="flut"/>
+			<if condition="slide-down"/> 
+			<unset-flag name="main"/>
+			<set-flag name="sfdn"/>
+		</rule> 
+
+
+<!-- Technique Channel Changes -->
+
+		<rule name="Slide Up">
+			<if flag="slup"/>
+			<channel-change channel="2"/>
+		</rule>
+
+		<rule name="Slide Down">
+			<if flag="sldn"/>
+			<channel-change channel="3"/>
+		</rule>
+
+		<rule name="Slide Trem Up">
+			<if flag="stup"/>
+			<channel-change channel="4"/>
+		</rule>
+
+		<rule name="Slide Flutter Up">
+			<if flag="sfup"/>
+			<channel-change channel="4"/>
+		</rule>
+
+		<rule name="Slide Trem Down">
+			<if flag="stdn"/>
+			<channel-change channel="5"/>
+		</rule>
+
+		<rule name="Slide Flutter Down">
+			<if flag="sfdn"/>
+			<channel-change channel="5"/>
+		</rule>
+
+
+<!-- Reset to main sound rule. This MUST be the last rule! -->
+
+		
+		<rule name="Trumpet - main sound">
+			<if flag="main"/>
+			<channel-change channel="1"/>
+		</rule>
+			
+	</rules>
+
+</rule-set>
