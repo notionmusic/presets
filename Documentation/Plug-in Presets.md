@@ -46,8 +46,8 @@ In the preset definition, keep the number unique. This number will be used to ma
         <identifier>com.mydomain.pluginmaker.plugin.v1</identifier>
         <name>Preset Name Here</name>
         <user-techniques>
-            <technique number=1>Octaves</technique>
-            <technique number=2>Rips</technique>
+            <technique number="1">Octaves</technique>
+            <technique number="2">Rips</technique>
         </user-techniques>
     </preset>
 
