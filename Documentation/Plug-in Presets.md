@@ -12,7 +12,7 @@ A plug-in preset is a folder with these items:
 Preset.xml
 ----------
 
-This is a minimal definition for a presets XML file. Use your own reverse domain name to keep your preset identifier unique, but you can structure the identifier as you like. 
+This is a minimal definition for a presets XML file. You can structure the identifier as you like, or for example use your own reverse domain name to make sure it is unique. 
 
     <preset>
         <identifier>com.mydomain.pluginmaker.plugin.v1</identifier>
@@ -30,9 +30,11 @@ Each file should have:
 * One part with a plug-in instrument
 * One rules definition in `Use Rules`
 
+You can put music and tests of various expressions in this file. This is useful and recommended. 
+
 The part will be used as a template when adding this instrument to the score, so things like the staff name, clef, transposition, abbreviation, and staff type will be copied when you add this instrument into your score.
 
-You can put music and tests of various expressions in this file. This is useful and recommended. 
+By default, the order of these instruments when shown in Score Setup, will be alphabetical. But you can customise the order, by adding a number to the front of the Notion file. e.g. "01 Violin.notion", "02 Viola.notion" etc. The number itself will not be shown in Score Setup.
 
 
 Preset Expressions
