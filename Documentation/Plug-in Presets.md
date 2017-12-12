@@ -1,7 +1,7 @@
 Creating Presets for Notion
 ==========================
 
-A preset is a file that maps Notion's written articulations and expressions to 3rd party VST instruments (or plug-ins).
+A preset is a file that maps Notion's written articulations and expressions to 3rd party VST instruments (or plug-ins). For a couple of examples, look in the [Demos folder](/Demos).
 
 A preset is a folder with these items:
 
@@ -34,6 +34,7 @@ Each file should have:
 * One rules definition in `Use Rules`
 
 You can put music and tests of various expressions in this file. This is useful and recommended. 
+![Notion file with Rule](/Documentation/Screenshots/rules_editor.png?raw=true "Notion file with Rule")
 
 The part will be used as a template when adding this instrument to the score, so things like the staff name, clef, transposition, abbreviation, and staff type will be copied when you add this instrument into your score.
 
