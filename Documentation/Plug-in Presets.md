@@ -81,5 +81,5 @@ On launching, Notion will check the two preset locations above, and add any Pres
 Look under VST Presets>Your Preset Name in Score Setup.
 
 Select the instrument, and Notion will add it to the score.
-
+![Score Setup](/Documentation/Screenshots/vst_preset_scoresetup.png?raw=true "Score Setup")
 
