@@ -4,10 +4,10 @@ This readme is a basic overview of how to use GitHub to upload, download or edit
 
 If you are happy using GitHub, then jump straight to the next readme [here](Documentation/Plug-in%20Presets.md) which will outline what our presets are, how to create them, and how to use them: 
 
-##What is GitHub
+## What is GitHub
 
-##Sign-in
+## Sign-in
 
-##Downloading (cloning)
+## Downloading (cloning)
 
-##Uploading (committing)
+## Uploading (committing)
