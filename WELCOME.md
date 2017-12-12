@@ -1,23 +1,12 @@
 # Welcome to Notion's Community Presets
 
-This readme is a basic overview of how to use GitHub to upload, download or edit the preset files hosted here.
+This space allows you to download, edit, upload and share presets for Notion. A preset is a file that maps Notion's written articulations and expressions to 3rd party VST instruments (or plug-ins).
 
+You can find help in these three places:
+
+1. For help using GitHub
 If you are happy using GitHub, then jump straight to the [Preset readme here](Documentation/Plug-in%20Presets.md) which will outline what our presets are, how to create them, and how to use them. 
-
-## What is GitHub
-GitHub is open-source version control system: “open-source” in that it is free to use and develop; “version control”
-meaning any changes are documented so anyone can see what was changed and when.  If you follow the link above, you
-will find our repository (or repo) - a repository is just a collection of folders and files that constitutes a project.
-Anyone can log-in and make changes and work as a mini-community (hence “hub”) - but you don’t need to be a
-computer whizz!
-## Sign-in
-To make changes you'll need to create a (free) GitHub account. 
-## Downloading 
-### Downloading (for the first time, or a one-off - also known as cloning)
-Found a preset you want? Great! You need to download the whole project, rather than just a single preset - go [here](https://github.com/notionmusic/presets) and click "Clone or download"
-
-## Uploading (commit)
-
-## Making a different version (fork)
+2. For help creating and using the preset
+3. For help creating rulesets, and for anything else
 
 
