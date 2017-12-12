@@ -10,6 +10,7 @@ A preset is a folder with these items:
 * Within the Instruments folder, you can have optionally have one level of sub-folders for an instrument family (e.g. Brass / Wind / Strings)
 * In the Instruments folder (or optional sub-folder), a Notion file for each instrument - each Notion file contains an attached ruleset.
 
+![Preset folder](/Documentation/Screenshots/preset_folder_setup.png?raw=true "Presets Folder")
 
 Preset.xml
 ----------
