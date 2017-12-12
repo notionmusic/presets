@@ -35,6 +35,7 @@ Each file should have:
 
 You can put music and tests of various expressions in this file. This is useful and recommended. 
 ![Notion file with Rule](/Documentation/Screenshots/rules_editor.png?raw=true "Notion file with Rule" )
+*This image shows: the Notion score with a VSL Cello staff loaded; the VSL plug-in interface; the Notion Rules Editor; the VSL Cello Rule attached to the staff; some test notes and articulations* 
 
 The part will be used as a template when adding this instrument to the score, so things like the staff name, clef, transposition, abbreviation, and staff type will be copied when you add this instrument into your score.
 
