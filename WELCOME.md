@@ -6,7 +6,7 @@ If you are happy using GitHub, then jump straight to the [Preset readme here](Do
 
 ## What is GitHub
 GitHub is open-source version control system: “open-source” in that it is free to use and develop; “version control”
-meaning any changes are documented so anyone can see what was changed and when. If you follow the link above, you
+meaning any changes are documented so anyone can see what was changed and when.  If you follow the link above, you
 will find our repository (or repo) - a repository is just a collection of folders and files that constitutes a project.
 Anyone can log-in and make changes and work as a mini-community (hence “hub”) - but you don’t need to be a
 computer whizz!
