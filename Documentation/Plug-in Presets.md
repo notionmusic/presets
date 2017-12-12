@@ -34,7 +34,7 @@ Each file should have:
 * One rules definition in `Use Rules`
 
 You can put music and tests of various expressions in this file. This is useful and recommended. 
-![Notion file with Rule](/Documentation/Screenshots/rules_editor.png?raw=true =100x "Notion file with Rule" )
+![Notion file with Rule](/Documentation/Screenshots/rules_editor.png?raw=true "Notion file with Rule" )
 
 The part will be used as a template when adding this instrument to the score, so things like the staff name, clef, transposition, abbreviation, and staff type will be copied when you add this instrument into your score.
 
