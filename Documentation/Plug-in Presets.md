@@ -58,6 +58,8 @@ In the preset definition, keep the number unique. This number will be used to ma
 
 Once you've created the expression in the XML and the corresponding rule in the Notion file, you can use it. Click the Techniques box in the Palette, then the arrow. This will show 'User' in the cursor. Place it where you wish in the score - Notion will then give you the list of expressions that you created.
 
+![Preset Expressions](/Documentation/Screenshots/preset_expressions.png?raw=true "Preset Expressions")
+
 Preset locations
 ----------------
 You can save the folder in one of two possible locations (depending on how you wish to organise yourself):
