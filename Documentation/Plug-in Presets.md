@@ -1,12 +1,14 @@
-Plug-in Presets for Notion
+Creating Presets for Notion
 ==========================
 
-A plug-in preset is a folder with these items:
+A preset is a file that maps Notion's written articulations and expressions to 3rd party VST instruments (or plug-ins).
+
+A preset is a folder with these items:
 
 * A file named `Preset.xml`
 * A folder named `Instruments`
 * Within the Instruments folder, you can have optionally have one level of sub-folders for an instrument family (e.g. Brass / Wind / Strings)
-* In the Instruments folder (or optional sub-folder), a Notion file for each instrument
+* In the Instruments folder (or optional sub-folder), a Notion file for each instrument - each Notion file contains an attached ruleset.
 
 
 Preset.xml
