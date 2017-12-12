@@ -1,4 +1,5 @@
 # Welcome to Notion's Community Presets
-Presets for sound libraries
-This readme is a basic overview of how to upload, download or edit files hosted here
-[Find the preset info here] (Documentation/Plug-in Presets.md)
+
+This readme is a basic overview of how to upload, download or edit the preset files hosted here
+
+If you are happy using GitHub, then jump straight to the next readme which will outline what our presets are, how to create them, and how to use them: [Find it here](presets/Documentation/Plug-in Presets.md)
