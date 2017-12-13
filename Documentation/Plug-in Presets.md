@@ -67,9 +67,9 @@ The Rules Editor is built into Notion and can be used to edit the rules that def
 
 All rules where all rule conditions are fulfilled are executed and the defined acions of these rules are performed. A rule will only be executed if all its conditions are true but for one note multiple rules can be executed if their conditions are fulfilled.
 
-For a detailed description on how to use the Rules Editor see the [Notion User Guide](Documentation/Notion%206.3%20User%20Guide.pdf) page 9.13 and for a list of all available techniques and expressions in the Rules Editor, see the Appendix on page 16.5.
+For a detailed description on how to use the Rules Editor see the [Notion User Guide](/Documentation/Notion%206.3%20User%20Guide.pdf) page 9.13 and for a list of all available techniques and expressions in the Rules Editor, see the Appendix on page 16.5.
 
 
 Making the preset available on GitHub
 -------------------------------------
-For information on how to make self created presets available, see the [GitHub readme](Documentation/Using%20GitHub.md).
+For information on how to make self created presets available, see the [GitHub readme](/Documentation/Using%20GitHub.md).
