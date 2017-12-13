@@ -36,7 +36,7 @@ Select the instrument, and Notion will add it to the score.
 
 Creating and uploading presets
 ------------------------------
-If there is no preset for the sample library you want to use, be invited to create your own and make it available online so that others can use and improve it.
+If there is no preset for the sample library you want to use, please feel free to create your own and make it available online so that others can use and improve it.
 
 Documentation on how to create presets can be found in the [Preset readme](Documentation/Plug-in%20Presets.md).
 If you have created your own preset folder and don't know how to make it available on GitHub, see the [GitHub readme](Documentation/Using%20GitHub.md).
