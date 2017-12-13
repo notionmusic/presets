@@ -1,20 +1,19 @@
 Creating Presets for Notion
 ==========================
-
 A preset is a file that maps Notion's written articulations and expressions to 3rd party VST instruments (or plug-ins). For a couple of examples, look in the [Demos folder](/Demos).
 
 A preset is a folder with these items:
 
 * A file named `Preset.xml`
 * A folder named `Instruments`
-* Within the Instruments folder, you can have optionally have one level of sub-folders for an instrument family (e.g. Brass / Wind / Strings)
+* Within the Instruments folder, you can optionally have one level of sub-folders for an instrument family (e.g. Brass / Wind / Strings)
 * In the Instruments folder (or optional sub-folder), a Notion file for each instrument - each Notion file contains an attached ruleset.
 
 ![Preset folder](/Documentation/Screenshots/preset_folder_setup.png?raw=true "Presets Folder")
 
+
 Preset.xml
 ----------
-
 This is a minimal definition for a presets XML file. You can structure the identifier as you like, or for example use your own reverse domain name to make sure it is unique. 
 
     <preset>
@@ -25,26 +24,25 @@ This is a minimal definition for a presets XML file. You can structure the ident
 
 An instruments file
 -------------------
-
 Each Notion file in the Instruments folder defines one instrument, which will then come up as an instrument in your preset.
 
 Each file should have:
 
-* One part with a plug-in instrument
-* One rules definition in `Use Rules`
+* Exactly one part with a plug-in instrument
+* Exactly one rules definition in `Tools>Use Rules...`
 
-You can put music and tests of various expressions in this file. This is useful and recommended. 
+You can put music and tests of various expressions in this file. This is useful and recommended.
+
 ![Notion file with Rule](/Documentation/Screenshots/rules_editor.png?raw=true "Notion file with Rule" )
-*This image shows: the Notion score with a VSL Cello staff loaded; the VSL plug-in interface; the Notion Rules Editor; the VSL Cello Rule attached to the staff; some test notes and articulations* 
+*This image shows the Notion Rules Editor containing the VSL Cello rule, the VSL plug-in interface and a Notion score containing some test notes and articulations with the VSL Cello Rule attached to the staff*
 
-The part will be used as a template when adding this instrument to the score, so things like the staff name, clef, transposition, abbreviation, and staff type will be copied when you add this instrument into your score.
+The part will be used as a template when adding this instrument to the score. When you add this instrument into your score, Staff name and abbreviation, clef, transposition and staff type will be copied from the template into the added part of your score.
 
 By default, the order of these instruments when shown in Score Setup, will be alphabetical. But you can customise the order, by adding a number to the front of the Notion file. e.g. "01 Violin.notion", "02 Viola.notion" etc. The number itself will not be shown in Score Setup.
 
 
 Preset Expressions
 ------------------------
-
 Many sound libraries have sounds that don't have a standard technique name in notation. You can have your preset access these with a preset expression, or user technique.
 
 In the preset definition, keep the number unique. This number will be used to match an expression you've entered in the score and the rule you make for it.
@@ -62,28 +60,16 @@ Once you've created the expression in the XML and the corresponding rule in the 
 
 ![Preset Expressions](/Documentation/Screenshots/preset_expression.png?raw=true "Preset Expressions")
 
-Preset locations
-----------------
-You can save the folder in one of two possible locations (depending on how you wish to organise yourself):
 
-On macOS, Notion will look for presets here:
+Using the Rules Editor
+----------------------
+The Rules Editor is built into Notion and can be used to edit the rules that define the mapping between articulations and techniques in the score and the control events sent to the player of the sample library. It can be opened when creating a new or editing an existing rule set in `Tools>Use Rules...`
 
-* `/Users/<user>/Documents/Notion/Presets` (you will need to create this folder if it does not already exist)
-* `/Library/Application Support/Notion Music/Notion 6/Presets`
+All rules where all rule conditions are fulfilled are executed and the defined acions of these rules are performed. A rule will only be executed if all its conditions are true but for one note multiple rules can be executed if their conditions are fulfilled.
 
-On Windows, Notion looks here:
-
-* `C:\Users\<users>\Documents\Notion\Presets`(you will need to create this folder if it does not already exist)
-* `C:\Program Files\Notion 6\Presets` (or where you have installed Notion)
-
-The location of the second of each locations above will change with the app's major version, so Notion 7 will have presets in its own folder.
+For a detailed description on how to use the Rules Editor see the [Notion User Guide](Documentation/Notion%206.3%20User%20Guide.pdf) page 9.13 and for a list of all available techniques and expressions in the Rules Editor, see the Appendix on page 16.5.
 
 
-Using the presets
-----------------
-On launching, Notion will check the two preset locations above, and add any Presets it finds to Score Setup. 
-Look under VST Presets>Your Preset Name in Score Setup.
-
-Select the instrument, and Notion will add it to the score.
-![Score Setup](/Documentation/Screenshots/vst_preset_scoresetup.png?raw=true "Score Setup")
-
+Making the preset available on GitHub
+-------------------------------------
+For information on how to make self created presets available, see the [GitHub readme](Documentation/Using%20GitHub.md).
