@@ -6,7 +6,7 @@ Getting started
 =================
 To get started, download the repository as described in the [GitHub readme](Documentation/Using%20GitHub.md).
 
-After you have downloaded the repository, copy the preset folders you want to use from presets/Libraries/<Company name> to one of the following locations:
+After you have downloaded the repository, copy the preset folders you want to use from presets/Libraries/&lt;Vendor name&gt; to one of the following locations:
 
 Preset locations
 ----------------
