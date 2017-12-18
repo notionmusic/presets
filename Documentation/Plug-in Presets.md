@@ -56,7 +56,7 @@ In the preset definition, keep the number unique. This number will be used to ma
         </user-techniques>
     </preset>
 
-Once you've created the expression in the XML, you can then create the corresponding rule in the Rules Editor (Condition>User Expression) Notion file. To actually use the new expression once a new instrument is loaded from your preset, click the Techniques box in the Palette, then the arrow. This will show 'User' in the cursor. Place it where you wish in the score - Notion will then give you the list of expressions that you created.
+Once you've created the expression in the XML, you can then create the corresponding rule in the Rules Editor (Condition>User Expression) within the Notion instrument file. To actually use the new expression once a new instrument is loaded from your preset, click the Techniques box in the Palette, then the arrow. This will show 'User' in the cursor. Place it where you wish in the score - Notion will then give you the list of expressions that you created.
 
 ![Preset Expressions](/Documentation/Screenshots/preset_expression.png?raw=true "Preset Expressions")
 
