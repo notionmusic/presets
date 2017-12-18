@@ -56,16 +56,16 @@ In the preset definition, keep the number unique. This number will be used to ma
         </user-techniques>
     </preset>
 
-Once you've created the expression in the XML and the corresponding rule in the Notion file, you can use it. Click the Techniques box in the Palette, then the arrow. This will show 'User' in the cursor. Place it where you wish in the score - Notion will then give you the list of expressions that you created.
+Once you've created the expression in the XML, you can then create the corresponding rule in the Rules Editor (Condition>User Expression) Notion file. To actually use the new expression once a new instrument is loaded from your preset, click the Techniques box in the Palette, then the arrow. This will show 'User' in the cursor. Place it where you wish in the score - Notion will then give you the list of expressions that you created.
 
 ![Preset Expressions](/Documentation/Screenshots/preset_expression.png?raw=true "Preset Expressions")
 
 
 Using the Rules Editor
 ----------------------
-The Rules Editor is built into Notion and can be used to edit the rules that define the mapping between articulations and techniques in the score and the control events sent to the player of the sample library. It can be opened when creating a new or editing an existing rule set in `Tools>Use Rules...`
+The Rules Editor is built into Notion and can be used to edit the rules that define the mapping between articulations and techniques in the score and the control events sent to the player of the sample library. It can be opened when creating a new or editing an existing rule set in `Tools>Use Rules...` 
 
-All rules where all rule conditions are fulfilled are executed and the defined acions of these rules are performed. A rule will only be executed if all its conditions are true but for one note multiple rules can be executed if their conditions are fulfilled.
+All rules (where all rule conditions are fulfilled) are executed, and the defined actions of these rules are performed. A rule will only be executed if all its conditions are true, though for one-note, multiple rules can be executed if their conditions are fulfilled.
 
 For a detailed description on how to use the Rules Editor see the [Notion User Guide](/Documentation/Notion%206.3%20User%20Guide.pdf) page 9.13 and for a list of all available techniques and expressions in the Rules Editor, see the Appendix on page 16.5.
 
